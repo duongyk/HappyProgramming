@@ -13,7 +13,6 @@ import model.inter.UserSkillDAO;
  *
  * @author Duong
  */
-to la toan
 public class UserSkillDAOImpl extends MyDAO implements UserSkillDAO {
     
 }
