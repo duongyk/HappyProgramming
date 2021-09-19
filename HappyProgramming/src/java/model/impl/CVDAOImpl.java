@@ -13,5 +13,7 @@ import model.inter.CVDAO;
  * @author Duong
  */
 public class CVDAOImpl extends MyDAO implements CVDAO {
-
+    public void dmGiang() {
+        
+    }
 }
