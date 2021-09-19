@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.impl;
+
+import context.MyDAO;
+import model.inter.SkillMentorDAO;
 
 /**
  *
  * @author Duong
  */
-public class DAORating extends MyDAO {
-    
+public class SkillMentorDAOImpl extends MyDAO implements SkillMentorDAO {
+
 }

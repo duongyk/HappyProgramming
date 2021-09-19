@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.inter;
 
 /**
  *
  * @author Duong
  */
-public class DAORequestSkill extends MyDAO {
-    
+public interface RatingDAO {
+    public void insert();
+    public void update();
+    public void delete();
 }

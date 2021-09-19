@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.inter;
 
 /**
  *
  * @author Duong
  */
-public class DAOCV extends MyDAO {
+public interface RequestSkillDAO {
     
 }

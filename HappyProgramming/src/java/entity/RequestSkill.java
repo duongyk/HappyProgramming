@@ -10,5 +10,31 @@ package entity;
  * @author Duong
  */
 public class RequestSkill {
-    
+
+    private int rId;
+    private int sId;
+
+    public RequestSkill() {
+    }
+
+    public RequestSkill(int rId, int sId) {
+        this.rId = rId;
+        this.sId = sId;
+    }
+
+    public int getrId() {
+        return rId;
+    }
+
+    public void setrId(int rId) {
+        this.rId = rId;
+    }
+
+    public int getsId() {
+        return sId;
+    }
+
+    public void setsId(int sId) {
+        this.sId = sId;
+    }
 }

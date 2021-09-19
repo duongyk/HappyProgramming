@@ -10,5 +10,17 @@ package entity;
  * @author Duong
  */
 public class UserSkill {
-    
+
+    private int uId;
+    private int sId;
+    private String status;
+
+    public UserSkill() {
+    }
+
+    public UserSkill(int uId, int sId, String status) {
+        this.uId = uId;
+        this.sId = sId;
+        this.status = status;
+    }
 }
