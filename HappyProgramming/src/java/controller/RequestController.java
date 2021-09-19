@@ -41,6 +41,8 @@ public class RequestController extends HttpServlet {
             out.println("<h1>Servlet RequestController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+            
+            out.println("blah blah");
         }
     }
 
