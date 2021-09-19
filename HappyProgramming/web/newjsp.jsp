@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
     <%
-        ArrayList<User> list = (ArrayList<User>) request.getAttribute("listuser");
+        ArrayList<User> list = (ArrayList<User>) request.getAttribute("userlist");
         %> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,11 +21,12 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <%= list.size()%> 
+        
         <% 
-            for (User u: list){
-                System.out.println(u.getUsername()+"   "+u.getPasswrd());
-                System.out.println("");
-            }        
+            for (User u: list){%>
+                <%=u.getUsername()%> <%=u.getPasswrd() %>
+            <%}        
         %>
     </body>
 </html>

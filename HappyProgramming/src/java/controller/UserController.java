@@ -5,6 +5,7 @@
  */
 package controller;
 
+import entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -33,21 +34,24 @@ public class UserController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     UserDAOImpl u = new UserDAOImpl();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         try (PrintWriter out = response.getWriter()) {
             String service = request.getParameter("service");
+            if (service == null) {
+                service = "get";
+            }
             if (service.equalsIgnoreCase("get")) {
-            
-            
-         ArrayList userlist = u.getUserList();
-         request.setAttribute("userlist", userlist);
-            request.getRequestDispatcher("newjsp.jsp").forward(request, response);
+                ArrayList<User> userlist = u.getUserList();
+                request.setAttribute("userlist", userlist);
+                sendDispatcher(request, response, "newjsp.jsp");
             }
         }
     }
+
     public void sendDispatcher(HttpServletRequest request, HttpServletResponse response, String path) {
         try {
             RequestDispatcher rd = request.getRequestDispatcher(path);
