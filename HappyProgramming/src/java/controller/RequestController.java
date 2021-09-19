@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Duong
+ * @author Duong tuan vu
  */
 public class RequestController extends HttpServlet {
 
