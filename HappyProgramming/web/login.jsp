@@ -14,7 +14,8 @@
     </head>
     <body>
         <div>
-            <form action="login" method="post">
+            <form action="UserControllerMap" method="post">
+                <input type="hidden" name ="service" value="get">
                 <table>
                     <tr>
                         <th colspan="2">

@@ -6,12 +6,11 @@
 package model.impl;
 
 import context.MyDAO;
-import model.inter.SkillMentorDAO;
 
 /**
  *
  * @author Duong
  */
-public class SkillMentorDAOImpl extends MyDAO implements SkillMentorDAO {
+public class RequestSkillDAO extends MyDAO {
 
 }

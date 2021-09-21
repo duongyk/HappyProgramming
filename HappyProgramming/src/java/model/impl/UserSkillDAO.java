@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.inter;
+//test 31311@@@
+package model.impl;
+
+import context.MyDAO;
 
 /**
  *
  * @author Duong
  */
-public interface RequestSkillDAO {
+public class UserSkillDAO extends MyDAO {
     
 }

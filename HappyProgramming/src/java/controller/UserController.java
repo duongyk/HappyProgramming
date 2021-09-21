@@ -5,6 +5,7 @@
  */
 package controller;
 
+import entity.Rating;
 import entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +17,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.impl.UserDAOImpl;
+import model.impl.RatingDAO;
+import model.impl.UserDAO;
 
 /**
  *
@@ -33,20 +35,58 @@ public class UserController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    UserDAOImpl u = new UserDAOImpl();
+    UserDAO userDAO = new UserDAO();
+    RatingDAO ratingDAO = new RatingDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
         try (PrintWriter out = response.getWriter()) {
+
             String service = request.getParameter("service");
+
             if (service == null) {
-                service = "get";
+                service = "login";
             }
+
             if (service.equalsIgnoreCase("get")) {
-                ArrayList<User> userlist = u.getUserList();
+                ArrayList<User> userlist = userDAO.getUserList();
                 request.setAttribute("userlist", userlist);
+                sendDispatcher(request, response, "newjsp.jsp");
+            }
+
+            if (service.equalsIgnoreCase("login")) {
+                String userName = request.getParameter("username");
+                String password = request.getParameter("password");
+                User U = userDAO.getUser(userName, password);
+                if (U == null) { //login fail
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                } else {
+                    request.getRequestDispatcher("newjsp12.jsp").forward(request, response);
+                }
+
+            }
+
+            if (service.equalsIgnoreCase("logout")) {
+
+            }
+
+            if (service.equalsIgnoreCase("getRating")) {
+                User x = (User) request.getSession().getAttribute("currUser");
+                ArrayList<Rating> listRating = ratingDAO.getRating(x);
+                request.setAttribute("listRating", listRating);
+                sendDispatcher(request, response, "newjsp.jsp");
+            }
+
+            if (service.equalsIgnoreCase("rate")) {
+                User x = (User) request.getSession().getAttribute("currUser");
+                int mentorId = Integer.parseInt(request.getParameter("mentorId"));
+                int rate = Integer.parseInt(request.getParameter("rate"));
+                String comment = request.getParameter("comment");
+                Rating rating = new Rating(x.getuId(), mentorId, comment, rate);
+                ratingDAO.insert(rating);
+
                 sendDispatcher(request, response, "newjsp.jsp");
             }
         }

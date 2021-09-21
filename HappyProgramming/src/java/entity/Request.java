@@ -20,12 +20,12 @@ public class Request {
     private int toId;
     private Date deadlineDate;
     private Date deadlineHour;
-    private int status;
+    private String status;
 
     public Request() {
     }
 
-    public Request(String title, String content, int fromId, int toId, Date deadlineDate, Date deadlineHour, int status) {
+    public Request(String title, String content, int fromId, int toId, Date deadlineDate, Date deadlineHour, String status) {
         this.title = title;
         this.content = content;
         this.fromId = fromId;
@@ -91,11 +91,11 @@ public class Request {
         this.deadlineHour = deadlineHour;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

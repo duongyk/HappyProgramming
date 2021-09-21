@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        Tao la bo giang
+        <div><a href="UserControllerMap?service=get">aaa</a></div>
+        <div><a href="newjsp1.jsp">bbb</a></div>
     </body>
 </html>

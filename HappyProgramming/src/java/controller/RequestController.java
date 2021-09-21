@@ -5,8 +5,11 @@
  */
 package controller;
 
+import entity.Request;
+import entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -14,6 +17,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.impl.RequestDAO;
+import model.impl.UserDAO;
 
 /**
  *
@@ -30,17 +35,25 @@ public class RequestController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    UserDAO userDao = new UserDAO();
+    RequestDAO requestDAO = new RequestDAO();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String service = request.getParameter("service");
+            
             if (service == null) {
                 service = "";
             }
-            if (service.equalsIgnoreCase("")) {
-                
+            if (service.equalsIgnoreCase("listbyme")) {
+                User x = (User) request.getSession().getAttribute("currUser");
+                ArrayList<Request> listRequest = requestDAO.getListByMe(x);
+                request.setAttribute("listRequest", listRequest);
+                sendDispatcher(request, response, "newjsp.jsp");
             }
+            
         }
     }
     

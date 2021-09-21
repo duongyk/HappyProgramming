@@ -29,7 +29,14 @@ public class Rating {
         this.rating = rating;
         this.date = date;
     }
-
+    
+    public Rating(int fromId, int toId, String comment, int rating) {
+        this.fromId = fromId;
+        this.toId = toId;
+        this.comment = comment;
+        this.rating = rating;
+    }
+    
     public int getFromId() {
         return fromId;
     }

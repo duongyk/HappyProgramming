@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="entity.User"%>
-<%@page import="model.impl.UserDAOImpl"%>
+<%@page import="model.impl.UserDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
 <%@page import = "model.*" %>
@@ -25,7 +25,7 @@
         
         <% 
             for (User u: list){%>
-                <%=u.getUsername()%> <%=u.getPasswrd() %>
+                <%=u.getUsername()%> <%=u.getPassword() %>
             <%}        
         %>
     </body>
