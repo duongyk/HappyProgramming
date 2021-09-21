@@ -90,22 +90,22 @@ FOREIGN KEY ([toId]) REFERENCES dbo.[User]([uId]),
 
 -----dbo.[User]
 --mentee data
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentee01', 'Daxua011', 'Yasuo', 'menteeno1@fpt.edu.vn', '0932322287', '2001-11-09', 'Male', '', '1');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentee02', 'Hasagi0110', 'GiangNV', 'giangnvthe150748@fpt.edu.vn', '0123456789', '2001-04-12', 'Male', '', '1');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentee03', 'Mentee003', 'DuongVV', 'duongvvhe150773@fpt.edu.vn', '1234567891', '2001-05-10', 'Male', '', '1');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentee04', 'Mentee004', 'ThangTV', 'thangtvhe151307@fpt.edu.vn', '2345678912', '2001-11-24', 'Male', '', '1');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentee05', 'Mentee005', 'ToanPK', 'toangpk131393@fpt.edu.vn', '3456789123', '2001-10-25', 'Male', '', '1');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentee01', 'Daxua011', 'Yasuo', 'menteeno1@fpt.edu.vn', '0932322287', '2001-11-09', 'Male', '', '1');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentee02', 'Hasagi0110', 'GiangNV', 'giangnvthe150748@fpt.edu.vn', '0123456789', '2001-04-12', 'Male', '', '1');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentee03', 'Mentee003', 'DuongVV', 'duongvvhe150773@fpt.edu.vn', '1234567891', '2001-05-10', 'Male', '', '1');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentee04', 'Mentee004', 'ThangTV', 'thangtvhe151307@fpt.edu.vn', '2345678912', '2001-11-24', 'Male', '', '1');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentee05', 'Mentee005', 'ToanPK', 'toangpk131393@fpt.edu.vn', '3456789123', '2001-10-25', 'Male', '', '1');
 --mentor data
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor01', 'Mentor001', 'Chiisai Chinchin', 'chinchin01@gmail.com', '0136581923', '1995-04-01', 'Male', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor02', 'Mentor002', N'Chức Bảnh', 'chucnv04@gmail.com', '0169182735', '1995-11-30', 'Male', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor03', 'Mentor003', 'Harab Serapel', 'Aarabzaraq@gmail.com', '0182910265', '1989-06-15', 'Female', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor04', 'Mentor004', N'Tùng Puoy', 'tanon0150@gmail.com', '0138192741', '2001-04-12', 'Gay', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor05', 'Mentor005', N'Hoàng Hương', 'zknight180@gmail.com', '0174629104', '1999-06-11', 'Male', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor06', 'Mentor006', N'Thảo Thảo', 'thaokiuto345@gmail.com', '0175639001', '2001-12-25', 'Female', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor07', 'Mentor007', 'Kuriko Shinozaki', 'kurikoshinozaki@gmail.com', '0014837779', '1990-01-29', 'Female', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor08', 'Mentor008', 'Leon Foe', 'leonfoebartfort@gmail.com', '0285776812', '1996-10-03', 'Male', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor09', 'Mentor009', 'Olivia Park', 'parkolivia@gmail.com', '0938772247', '1989-09-24', 'Female', '', '2');
-INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('Mentor10', 'Mentor010', 'Seo Yoon', 'seoyoonalt@gmail.com', '0236581999', '2000-12-04', 'Female', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor01', 'Mentor001', 'Chiisai Chinchin', 'chinchin01@gmail.com', '0136581923', '1995-04-01', 'Male', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor02', 'Mentor002', N'Chức Bảnh', 'chucnv04@gmail.com', '0169182735', '1995-11-30', 'Male', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor03', 'Mentor003', 'Harab Serapel', 'Aarabzaraq@gmail.com', '0182910265', '1989-06-15', 'Female', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor04', 'Mentor004', N'Tùng Puoy', 'tanon0150@gmail.com', '0138192741', '2001-04-12', 'Gay', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor05', 'Mentor005', N'Hoàng Hương', 'zknight180@gmail.com', '0174629104', '1999-06-11', 'Male', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor06', 'Mentor006', N'Thảo Thảo', 'thaokiuto345@gmail.com', '0175639001', '2001-12-25', 'Female', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor07', 'Mentor007', 'Kuriko Shinozaki', 'kurikoshinozaki@gmail.com', '0014837779', '1990-01-29', 'Female', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor08', 'Mentor008', 'Leon Foe', 'leonfoebartfort@gmail.com', '0285776812', '1996-10-03', 'Male', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor09', 'Mentor009', 'Olivia Park', 'parkolivia@gmail.com', '0938772247', '1989-09-24', 'Female', '', '2');
+INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('mentor10', 'Mentor010', 'Seo Yoon', 'seoyoonalt@gmail.com', '0236581999', '2000-12-04', 'Female', '', '2');
 --Admin data
 INSERT INTO [User](username, [password], fullname, uMail, uPhone, DOB, gender, uAvatar, uRole) VALUES ('admin', 'administrator', 'admin', '', '', '', '', '', '3');
 
