@@ -66,7 +66,7 @@ public class UserController extends HttpServlet {
                     request.setAttribute("mess", mess);
                     sendDispatcher(request, response, "login.jsp");
                 } else {
-                    sendDispatcher(request, response, "Home.jsp");
+                    sendDispatcher(request, response, "index.jsp");
                 }
 
             }
