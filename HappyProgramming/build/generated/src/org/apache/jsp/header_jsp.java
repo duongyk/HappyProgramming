@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -59,11 +59,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link id=\"u-theme-google-font\" rel=\"stylesheet\"\n");
       out.write("              href=\"https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i\">\n");
       out.write("    </head>\n");
-      out.write("\n");
-      out.write("\n");
       out.write("    <body class=\"u-body\">\n");
-      out.write("        <header class=\"u-clearfix u-custom-color-1 u-header \"><a href=\"\" \n");
-      out.write("                                                                 class=\"u-image u-logo u-image-1\" data-image-width=\"313\" data-image-height=\"95\" t>\n");
+      out.write("        <header class=\"u-clearfix u-custom-color-1 u-header \">\n");
+      out.write("            <a href=\"\" class=\"u-image u-logo u-image-1\" data-image-width=\"313\" data-image-height=\"95\" t>\n");
       out.write("                <img src=\"images/Logo.png\" class=\"u-logo-image u-logo-image-1\">\n");
       out.write("            </a>\n");
       out.write("            <nav class=\"u-align-right u-menu x u-offcanvas u-menu-1\" data-position=\"\" data-responsive-from=\"MD\">\n");
@@ -90,32 +88,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            </nav>\n");
       out.write("        </header>\n");
-      out.write("        <section class=\"u-clearfix u-custom-color-1 u-section-1\" id=\"sec-cd32\">\n");
-      out.write("            <div class=\"u-clearfix u-sheet u-valign-middle u-sheet-1\">\n");
-      out.write("                <img class=\"u-image u-image-1\" src=\"images/Homepagechalogin.png\" data-image-width=\"1812\" data-image-height=\"917\">\n");
-      out.write("            </div>\n");
-      out.write("        </section>\n");
       out.write("\n");
-      out.write("\n");
-      out.write("        <footer class=\"u-align-center u-clearfix u-footer \"><img class=\"u-image u-image-1\"\n");
-      out.write("                                                                 src=\"images/logowhite.png\" data-image-width=\"571\" data-image-height=\"388\"><a\n");
-      out.write("                                                                 class=\"u-active-none u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-text-body-color u-btn-1\">0123456789</a>\n");
-      out.write("            <p class=\"u-text u-text-default u-text-1\"> San Jose,Silicon Valley, California</p>\n");
-      out.write("            <p class=\"u-text u-text-2\"> HappyProgramming@gmail.com</p>\n");
-      out.write("            <div class=\"u-grey-light-2 u-map u-map-1\">\n");
-      out.write("                <div class=\"embed-responsive\">\n");
-      out.write("                    <iframe class=\"embed-responsive-item\"\n");
-      out.write("                            src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d287205.9795192053!2d-121.9745609966744!3d37.31390644748984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcae48af93ff5%3A0xb99d8c0aca9f717b!2sSan%20Jose%2C%20California%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1632219783213!5m2!1svi!2s\"\n");
-      out.write("                            data-map=\"JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWVtYmVkJTIyJTJDJTIyYWRkcmVzcyUyMiUzQSUyMk1hbmhhdHRhbiUyQyUyME5ldyUyMFlvcmslMjIlMkMlMjJ6b29tJTIyJTNBMTAlMkMlMjJ0eXBlSWQlMjIlM0ElMjJyb2FkJTIyJTJDJTIybGFuZyUyMiUzQW51bGwlMkMlMjJhcGlLZXklMjIlM0ElMjJkJTIyJTJDJTIybWFya2VycyUyMiUzQSU1QiU1RCUyQyUyMmVtYmVkJTIyJTNBJTIyaHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvbSUyRm1hcHMlMkZlbWJlZCUzRnBiJTNEITFtMTghMW0xMiExbTMhMWQyODcyMDUuOTc5NTE5MjA1MyEyZC0xMjEuOTc0NTYwOTk2Njc0NCEzZDM3LjMxMzkwNjQ0NzQ4OTg0ITJtMyExZjAhMmYwITNmMCEzbTIhMWkxMDI0ITJpNzY4ITRmMTMuMSEzbTMhMW0yITFzMHg4MDhmY2FlNDhhZjkzZmY1JTI1M0EweGI5OWQ4YzBhY2E5ZjcxN2IhMnNTYW4lMjUyMEpvc2UlMjUyQyUyNTIwQ2FsaWZvcm5pYSUyNTJDJTI1MjBIb2ElMjUyMEslMjVFMSUyNUJCJTI1QjMhNWUwITNtMiExc3ZpITJzITR2MTYzMjIxOTc4MzIxMyE1bTIhMXN2aSEycyUyMiU3RA==\"></iframe>\n");
-      out.write("                </div>\n");
-      out.write("            </div><img class=\"u-image u-image-default u-image-2\" src=\"images/contact.png\" alt=\"\" data-image-width=\"177\"\n");
-      out.write("                       data-image-height=\"361\">\n");
-      out.write("        </footer>\n");
-      out.write("        <section class=\"copyright u-backlink u-clearfix u-grey-80\" style=\"height: 80px; \">\n");
-      out.write("            <span>Copyright © 2021 HappyProgramming. All rights reserved.</span>\n");
-      out.write("        </section>\n");
       out.write("    </body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
