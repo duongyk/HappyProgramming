@@ -40,10 +40,9 @@ public class UserDAO extends MyDAO {
     }
 
     public User getUser(String xName, String xPass) {
-
-        User x = null;
-        int xRole;
+        
         xSql = "select * from [User] where name=? and pass=?";
+        
         try {
             ps = con.prepareStatement(xSql);
             ps.setString(1, xName);
