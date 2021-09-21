@@ -13,39 +13,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <%
+            Object mess = request.getAttribute("mess");
+            if (mess == null) {
+                mess = "";
+            }
+        %>
         <div>
-            <form action="UserControllerMap" method="post">
+            <form action="UserControllerMap" method="POST">
                 <input type="hidden" name ="service" value="login">
-                <table>
-                    <tr>
-                        <th colspan="2">
-                            Login Form
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            User:
-                        </td> 
-                        <td>
-                            <input type="text" name ="username">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Password:
-                        </td> 
-                        <td>
-                            <input type="password" name ="password">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                             <input type="submit" value ="Login">
-                        </td> 
-                    </tr>          
-                </table>
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="pass">
+                        <button type="submit">SIGN IN</button>
             </form>
+            <%= mess.toString()%>
         </div>
     </body>
 </html>

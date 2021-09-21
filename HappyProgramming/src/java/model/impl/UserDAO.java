@@ -41,7 +41,7 @@ public class UserDAO extends MyDAO {
 
     public User getUser(String xName, String xPass) {
         
-        xSql = "select * from [User] where name=? and pass=?";
+        xSql = "select * from [User] where username=? and password=?";
         
         try {
             ps = con.prepareStatement(xSql);
@@ -62,4 +62,10 @@ public class UserDAO extends MyDAO {
         }
         return null;
     }
+    
+//    public static void main(String[] args) {
+//        UserDAO u = new UserDAO();
+//        User x= u.getUser("Mentee01", "Daxua011");
+//        if (x!=null) System.out.println("aa");
+//    }
 }
