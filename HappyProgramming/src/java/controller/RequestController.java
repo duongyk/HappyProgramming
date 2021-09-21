@@ -45,7 +45,7 @@ public class RequestController extends HttpServlet {
             String service = request.getParameter("service");
             
             if (service == null) {
-                service = "";
+                service = "listbyme";
             }
             if (service.equalsIgnoreCase("listbyme")) {
                 User x = (User) request.getSession().getAttribute("currUser");

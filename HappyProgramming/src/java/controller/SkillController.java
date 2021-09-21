@@ -36,10 +36,10 @@ public class SkillController extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String service = request.getParameter("service");
             if (service == null) {
-                service = "";
+                service = "a";
             }
-            if (service.equalsIgnoreCase("")) {
-                
+            if (service.equalsIgnoreCase("a")) {
+                sendDispatcher(request, response, "login.jsp");
             }
         }
     }

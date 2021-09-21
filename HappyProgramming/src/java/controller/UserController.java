@@ -60,10 +60,13 @@ public class UserController extends HttpServlet {
                 String userName = request.getParameter("username");
                 String password = request.getParameter("password");
                 User U = userDAO.getUser(userName, password);
+                String mess = "";
                 if (U == null) { //login fail
-                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                    mess= "login failed";
+                    request.setAttribute("mess", mess);
+                    sendDispatcher(request, response, "login.jsp");
                 } else {
-                    request.getRequestDispatcher("newjsp12.jsp").forward(request, response);
+                    sendDispatcher(request, response, "Home.jsp");
                 }
 
             }
