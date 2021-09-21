@@ -5,8 +5,10 @@
  */
 package controller;
 
+import entity.Skill;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -14,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.impl.SkillDAO;
 
 /**
  *
@@ -40,6 +43,15 @@ public class SkillController extends HttpServlet {
             }
             if (service.equalsIgnoreCase("a")) {
                 sendDispatcher(request, response, "login.jsp");
+            }
+            
+            if (service.equalsIgnoreCase("allSkill")) {
+                SkillDAO sDAO = new SkillDAO();
+                List<Skill> sList;
+                sList = sDAO.getAllSkill();
+                
+                request.setAttribute("sList", sList);
+                sendDispatcher(request, response, "newjsp.jsp");
             }
         }
     }
