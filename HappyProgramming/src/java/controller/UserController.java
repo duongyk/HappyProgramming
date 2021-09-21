@@ -59,14 +59,20 @@ public class UserController extends HttpServlet {
             if (service.equalsIgnoreCase("login")) {
                 String userName = request.getParameter("username");
                 String password = request.getParameter("password");
-                User U = userDAO.getUser(userName, password);
+                User user = userDAO.getUser(userName, password);
                 String mess = "";
-                if (U == null) { //login fail
-                    mess= "login failed";
+                if (user != null) {
+                    if (user.getuRole() == 3) {
+                        request.getSession().setAttribute("currUser", user);
+                        sendDispatcher(request, response, "dashboard.jsp");
+                    } else {
+                        request.getSession().setAttribute("currUser", user);
+                        sendDispatcher(request, response, "index.jsp");
+                    }
+                } else {
+                    mess = "login failed";
                     request.setAttribute("mess", mess);
                     sendDispatcher(request, response, "login.jsp");
-                } else {
-                    sendDispatcher(request, response, "index.jsp");
                 }
 
             }

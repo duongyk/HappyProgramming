@@ -4,6 +4,7 @@
     Author     : solov
 --%>
 
+<%@page import="entity.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="vi">
@@ -23,7 +24,8 @@
     <body class="u-body">
         <header>
              <jsp:include page="header.jsp"/>
-        </header>
+    <body class="u-body">
+        
         <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-cd32">
             <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
                 <img class="u-image u-image-1" src="images/Homepagechalogin.png" data-image-width="1812" data-image-height="917">

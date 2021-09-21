@@ -65,7 +65,7 @@ public class UserDAO extends MyDAO {
     
 //    public static void main(String[] args) {
 //        UserDAO u = new UserDAO();
-//        User x= u.getUser("Mentee01", "Daxua011");
-//        if (x!=null) System.out.println("aa");
+//        User x= u.getUser("admin", "administrator");
+//        if (x!=null) System.out.println(x.getuRole());
 //    }
 }

@@ -4,6 +4,7 @@
     Author     : solov
 --%>
 
+<%@page import="entity.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="vi">
@@ -20,6 +21,9 @@
         <link id="u-theme-google-font" rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     </head>
+    <%
+        User x = (User) request.getSession().getAttribute("currUser");
+    %>
     <body class="u-body">
         <header class="u-clearfix u-custom-color-1 u-header ">
             <a href="" class="u-image u-logo u-image-1" data-image-width="313" data-image-height="95" t>
@@ -33,21 +37,25 @@
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
                                 href="" style="padding: 10px 36px;">All mentors</a>
                         </li>
-                        <%-- CÁI NÀY DÙNG CHO HOMEPAGE ĐÃ ĐĂNG NHẬP 
-                            <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
-                            href="" style="padding: 10px 36px;">Request</a>
-                        </li> 
-                        --%>
-
                         <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
                                 href="" style="padding: 10px 36px;">All skills</a>
                         </li>
+                        <%if (x != null){%>
+                            <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
+                            href="" style="padding: 10px 36px;">Request</a>
+                        </li> 
+                        <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
+                            href="" style="padding: 10px 36px;">Profile</a>
+                        </li> 
+                        <%} else {%>
                         <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"  href="login.jsp" 
                                 style="padding: 10px 36px;">Login</a>
                         </li>
+                        <%}%>
                     </ul>
                 </div>
 
