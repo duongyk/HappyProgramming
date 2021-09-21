@@ -14,16 +14,14 @@ public class Skill {
     private int sId;
     private String sName;
     private String sDetail;
-    private int status;
 
     public Skill() {
     }
-
-    public Skill(int sId, String sName, String sDetail, int status) {
+    
+    public Skill(int sId, String sName, String sDetail) {
         this.sId = sId;
         this.sName = sName;
         this.sDetail = sDetail;
-        this.status = status;
     }
 
     public int getsId() {
@@ -48,14 +46,6 @@ public class Skill {
 
     public void setsDetail(String sDetail) {
         this.sDetail = sDetail;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
     }
 
 }
