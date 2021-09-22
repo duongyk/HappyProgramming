@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.impl;
+package dao.iplm;
 
 import context.MyDAO;
 import entity.Rating;
@@ -16,8 +16,9 @@ import java.util.ArrayList;
  *
  * @author Duong
  */
-public class RatingDAO extends MyDAO{
+public class RatingDAO extends MyDAO implements dao.RatingDAO{
 
+    @Override
     public ArrayList<Rating> getRating(User user) {
         ArrayList<Rating> list = new ArrayList<>();
         xSql = "select * from [Rating]";
@@ -46,6 +47,7 @@ public class RatingDAO extends MyDAO{
         return (list);
     }
 
+    @Override
     public void insert(Rating x) {
         xSql = "insert into [Rating] values (?,?,?,?,GETDATE())";
         try {

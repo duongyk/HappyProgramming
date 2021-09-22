@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.impl;
+package dao.iplm;
 
 import context.MyDAO;
 
@@ -11,6 +11,6 @@ import context.MyDAO;
  *
  * @author Duong
  */
-public class RequestSkillDAO extends MyDAO {
+public class SkillMentorDAO extends MyDAO implements dao.SkillMentorDAO{
 
 }

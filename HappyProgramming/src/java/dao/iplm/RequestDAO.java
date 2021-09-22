@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.impl;
+package dao.iplm;
 
 import context.MyDAO;
 import entity.Request;
@@ -15,8 +15,9 @@ import java.util.ArrayList;
  *
  * @author Duong
  */
-public class RequestDAO extends MyDAO{
+public class RequestDAO extends MyDAO implements dao.RequestDAO{
 
+    @Override
     public ArrayList<Request> getListByMe(User user) {
         ArrayList<Request> list = new ArrayList<>();
         xSql = "select * from [Request]";
@@ -46,6 +47,7 @@ public class RequestDAO extends MyDAO{
         return (list);
     }
     
+    @Override
     public int createRequest(Request req) {
         ArrayList<Request> list = new ArrayList<>();
         int n = 0;

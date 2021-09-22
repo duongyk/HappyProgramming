@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.impl;
-
-import context.MyDAO;
+package dao;
 
 /**
  *
  * @author Duong
  */
-public class SkillMentorDAO extends MyDAO {
-
+public interface UserSkillDAO {
+    
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.impl;
+package dao.iplm;
 
 import context.DBContext;
 import context.MyDAO;
@@ -15,8 +15,9 @@ import java.util.ArrayList;
  *
  * @author Duong
  */
-public class UserDAO extends MyDAO {
+public class UserDAO extends MyDAO implements dao.UserDAO {
 
+    @Override
     public ArrayList<User> getUserList() {
         ArrayList<User> t = new ArrayList<>();
         xSql = "select * from [User]";
@@ -39,10 +40,11 @@ public class UserDAO extends MyDAO {
         return (t);
     }
 
+    @Override
     public User getUser(String xName, String xPass) {
-        
+
         xSql = "select * from [User] where username=? and password=?";
-        
+
         try {
             ps = con.prepareStatement(xSql);
             ps.setString(1, xName);
@@ -62,7 +64,7 @@ public class UserDAO extends MyDAO {
         }
         return null;
     }
-    
+
 //    public static void main(String[] args) {
 //        UserDAO u = new UserDAO();
 //        User x= u.getUser("admin", "administrator");

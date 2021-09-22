@@ -17,8 +17,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.impl.RatingDAO;
-import model.impl.UserDAO;
+import dao.iplm.RatingDAO;
+import dao.iplm.UserDAO;
 
 /**
  *

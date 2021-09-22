@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.impl;
+package dao.iplm;
 
 import context.MyDAO;
 import entity.Skill;
@@ -13,7 +13,9 @@ import java.util.ArrayList;
  *
  * @author Duong
  */
-public class SkillDAO extends MyDAO {
+public class SkillDAO extends MyDAO implements dao.SkillDAO {
+
+    @Override
     public ArrayList<Skill> getAllSkill() {
         ArrayList<Skill> list = new ArrayList<>();
         xSql = "select * from [Skill]";
@@ -23,7 +25,7 @@ public class SkillDAO extends MyDAO {
         try {
             ps = con.prepareStatement(xSql);
             rs = ps.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 id = rs.getInt("sId");
                 name = rs.getString("sName");
                 detail = rs.getString("sDetail");
@@ -37,7 +39,8 @@ public class SkillDAO extends MyDAO {
         }
         return list;
     }
-    
+
+    @Override
     public ArrayList<Skill> getSkillByName(String sName) {
         ArrayList<Skill> list = new ArrayList<>();
         xSql = "select * from [Skill] where sName like '% " + sName + "%'";
@@ -47,7 +50,7 @@ public class SkillDAO extends MyDAO {
         try {
             ps = con.prepareStatement(xSql);
             rs = ps.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 id = rs.getInt("sId");
                 name = rs.getString("sName");
                 detail = rs.getString("sDetail");
