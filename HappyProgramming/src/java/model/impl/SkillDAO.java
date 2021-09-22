@@ -8,15 +8,14 @@ package model.impl;
 import context.MyDAO;
 import entity.Skill;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Duong
  */
 public class SkillDAO extends MyDAO {
-    public List<Skill> getAllSkill() {
-        List<Skill> list = new ArrayList<>();
+    public ArrayList<Skill> getAllSkill() {
+        ArrayList<Skill> list = new ArrayList<>();
         xSql = "select * from [Skill]";
         int id;
         String name, detail;
@@ -39,8 +38,8 @@ public class SkillDAO extends MyDAO {
         return list;
     }
     
-    public List<Skill> getSkillByName(String sName) {
-        List<Skill> list = new ArrayList<>();
+    public ArrayList<Skill> getSkillByName(String sName) {
+        ArrayList<Skill> list = new ArrayList<>();
         xSql = "select * from [Skill] where sName like '% " + sName + "%'";
         int id;
         String name, detail;

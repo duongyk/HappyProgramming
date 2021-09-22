@@ -51,7 +51,16 @@ public class SkillController extends HttpServlet {
                 sList = sDAO.getAllSkill();
                 
                 request.setAttribute("sList", sList);
-                sendDispatcher(request, response, "newjsp.jsp");
+                sendDispatcher(request, response, "skill.jsp");
+            }
+            
+            if (service.equalsIgnoreCase("searchSkill")) {
+                SkillDAO sDAO = new SkillDAO();
+                List<Skill> sList;
+                sList = sDAO.getAllSkill();
+                
+                request.setAttribute("sList", sList);
+                sendDispatcher(request, response, "skill.jsp");
             }
         }
     }

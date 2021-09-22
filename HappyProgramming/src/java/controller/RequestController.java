@@ -54,6 +54,10 @@ public class RequestController extends HttpServlet {
                 sendDispatcher(request, response, "newjsp.jsp");
             }
             
+            if (service.equalsIgnoreCase("createRequest")) {
+                User x = (User) request.getSession().getAttribute("currUser");
+            }
+            
         }
     }
     

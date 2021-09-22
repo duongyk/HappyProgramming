@@ -226,74 +226,74 @@ In addition to HTML, other markup languages support the use of CSS including XHT
 
 -----dbo.[UserSKill]
 --Mentee no.1
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 1, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 2, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 3, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 4, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 5, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 6, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 7, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 8, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 9, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 10, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 11, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 12, 'Done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 1, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 2, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 3, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 4, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 5, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 6, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 7, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 8, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 9, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 10, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 11, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (1, 12, 'done');
 
 --Mentee no.2
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 1, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 2, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 3, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 4, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 5, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 6, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 7, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 8, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 9, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 10, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 11, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 12, 'Done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 1, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 2, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 3, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 4, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 5, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 6, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 7, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 8, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 9, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 10, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 11, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (2, 12, 'done');
 
 --Mentee no.3
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 1, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 2, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 3, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 4, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 5, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 6, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 7, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 8, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 9, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 10, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 11, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 12, 'Inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 1, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 2, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 3, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 4, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 5, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 6, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 7, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 8, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 9, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 10, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 11, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (3, 12, 'inprocess');
 
 --Mentee no.4
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 1, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 2, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 3, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 4, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 5, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 6, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 7, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 8, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 9, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 10, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 11, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 12, 'Not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 1, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 2, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 3, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 4, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 5, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 6, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 7, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 8, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 9, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 10, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 11, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (4, 12, 'not');
 
 --Mentee no.5
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 1, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 2, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 3, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 4, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 5, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 6, 'Done');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 7, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 8, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 9, 'Inprocess');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 10, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 11, 'Not');
-INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 12, 'Not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 1, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 2, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 3, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 4, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 5, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 6, 'done');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 7, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 8, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 9, 'inprocess');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 10, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 11, 'not');
+INSERT INTO [UserSkill]([uId], [sID], usStatus) VALUES (5, 12, 'not');
 
 
 -----dbo.[CV]
@@ -393,13 +393,13 @@ INSERT INTO [SkillMentor]([uId],[sId]) VALUES(15, 10);
 -----dbo.[Request]
 --Mentee no.01 request
 --rId 1
-INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Implement java in html', 'I have problem with puting java code into my HTML page, can you show me how to solve this problem.', 1, 12, '2021-09-21', '2021-09-30 15:00:00', 'Pending');
+INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Implement java in html', 'I have problem with puting java code into my HTML page, can you show me how to solve this problem.', 1, 12, '2021-09-21', '2021-09-30 15:00:00', 'pending');
 --rId 2
-INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn code for game-developing', 'I want to learn C, C++ and C# but i dont know where to start, can you help me.', 1, 7, '2021-09-11', '2021-10-20 12:00:00', 'Processing');
+INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn code for game-developing', 'I want to learn C, C++ and C# but i dont know where to start, can you help me.', 1, 7, '2021-09-11', '2021-10-20 12:00:00', 'processing');
 --rId 3
-INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn code for web-design', 'I want to learn HTML5, JavaScript and CSS for web-design, i want your support in my learning.', 1, 10, '2021-09-21', '2021-09-30 15:00:00', 'Finished');
+INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn code for web-design', 'I want to learn HTML5, JavaScript and CSS for web-design, i want your support in my learning.', 1, 10, '2021-09-21', '2021-09-30 15:00:00', 'finished');
 --rId 4
-INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn CSS', 'I want to impove my CSS skill, can you help me.', 1, 9, '2021-09-21', '2021-02-11 09:30:00', 'Cancelled');
+INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn CSS', 'I want to impove my CSS skill, can you help me.', 1, 9, '2021-09-21', '2021-02-11 09:30:00', 'cancelled');
 
 
 -----dbo.[RequestSkill]

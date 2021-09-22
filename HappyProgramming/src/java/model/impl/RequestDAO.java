@@ -45,4 +45,26 @@ public class RequestDAO extends MyDAO{
         }
         return (list);
     }
+    
+    public int createRequest(Request req) {
+        ArrayList<Request> list = new ArrayList<>();
+        int n = 0;
+        xSql = "insert into [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) "
+                + "values (?, ?, ?, ?, getdate(), getdate(), 'pending');";
+        try {
+            ps = con.prepareStatement(xSql);
+            ps.setString(1, req.getTitle());
+            ps.setString(2, req.getContent());
+            ps.setInt(3, req.getToId());
+            ps.setInt(4, req.getToId());
+            ps.setDate(5, req.getDeadlineDate());
+            ps.setDate(6, req.getDeadlineHour());
+            ps.setString(7, req.getStatus());
+            n = ps.executeUpdate();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return n;
+    }
 }
