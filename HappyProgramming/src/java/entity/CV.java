@@ -14,7 +14,6 @@ public class CV {
     private int uId;
     private String profession;
     private String professionIntro;
-    private String service;
     private String serviceDescript;
     private String achivement;
 
@@ -25,7 +24,6 @@ public class CV {
         this.uId = uId;
         this.profession = profession;
         this.professionIntro = professionIntro;
-        this.service = service;
         this.serviceDescript = serviceDescript;
         this.achivement = achivement;
     }
@@ -52,14 +50,6 @@ public class CV {
 
     public void setProfessionIntro(String professionIntro) {
         this.professionIntro = professionIntro;
-    }
-
-    public String getService() {
-        return service;
-    }
-
-    public void setService(String service) {
-        this.service = service;
     }
 
     public String getServiceDescript() {
