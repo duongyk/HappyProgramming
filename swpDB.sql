@@ -47,7 +47,7 @@ content nvarchar(255) not null,
 fromId int not null,
 toId int not  null,
 deadlineDate date not null,
-deadlineHour datetime not null,
+--deadlineHour datetime not null,
 [rStatus] nvarchar(63) not null, -- pending, inprocess, done, cancelled
 FOREIGN KEY ([fromId]) REFERENCES dbo.[User]([uId]),
 FOREIGN KEY ([toId]) REFERENCES dbo.[User]([uId]),
@@ -393,13 +393,13 @@ INSERT INTO [SkillMentor]([uId],[sId]) VALUES(15, 10);
 -----dbo.[Request]
 --Mentee no.01 request
 --rId 1
-INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Implement java in html', 'I have problem with puting java code into my HTML page, can you show me how to solve this problem.', 1, 12, '2021-09-21', '2021-09-30 15:00:00', 'pending');
+INSERT INTO [Request](title, content, fromId, toId, deadlineDate, rStatus) VALUES ('Implement java in html', 'I have problem with puting java code into my HTML page, can you show me how to solve this problem.', 1, 12, '2021-09-21', 'pending');
 --rId 2
-INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn code for game-developing', 'I want to learn C, C++ and C# but i dont know where to start, can you help me.', 1, 7, '2021-09-11', '2021-10-20 12:00:00', 'processing');
+INSERT INTO [Request](title, content, fromId, toId, deadlineDate, rStatus) VALUES ('Learn code for game-developing', 'I want to learn C, C++ and C# but i dont know where to start, can you help me.', 1, 7, '2021-09-11', 'processing');
 --rId 3
-INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn code for web-design', 'I want to learn HTML5, JavaScript and CSS for web-design, i want your support in my learning.', 1, 10, '2021-09-21', '2021-09-30 15:00:00', 'finished');
+INSERT INTO [Request](title, content, fromId, toId, deadlineDate, rStatus) VALUES ('Learn code for web-design', 'I want to learn HTML5, JavaScript and CSS for web-design, i want your support in my learning.', 1, 10, '2021-09-21', 'finished');
 --rId 4
-INSERT INTO [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) VALUES ('Learn CSS', 'I want to impove my CSS skill, can you help me.', 1, 9, '2021-09-21', '2021-02-11 09:30:00', 'cancelled');
+INSERT INTO [Request](title, content, fromId, toId, deadlineDate, rStatus) VALUES ('Learn CSS', 'I want to impove my CSS skill, can you help me.', 1, 9, '2021-09-21', 'cancelled');
 
 
 -----dbo.[RequestSkill]
