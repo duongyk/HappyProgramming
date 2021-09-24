@@ -22,9 +22,9 @@
         <div>
             <form action="UserControllerMap" method="POST">
                 <input type="hidden" name ="service" value="login">
-                <input type="text" name="username" placeholder="username">
-                <input type="password" name="password" placeholder="pass">
-                        <button type="submit">SIGN IN</button>
+                <input type="text" name="username" placeholder="username" required>
+                <input type="password" name="password" placeholder="pass" required>
+                <button type="submit">SIGN IN</button>
             </form>
             <%= mess.toString()%>
         </div>

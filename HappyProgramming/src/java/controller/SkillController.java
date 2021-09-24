@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.iplm.SkillDAO;
+import java.util.ArrayList;
 
 /**
  *
@@ -33,6 +34,8 @@ public class SkillController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    SkillDAO skillDAO = new SkillDAO();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -44,27 +47,36 @@ public class SkillController extends HttpServlet {
             if (service.equalsIgnoreCase("a")) {
                 sendDispatcher(request, response, "login.jsp");
             }
-            
+
             if (service.equalsIgnoreCase("allSkill")) {
-                SkillDAO sDAO = new SkillDAO();
-                List<Skill> sList;
-                sList = sDAO.getAllSkill();
-                
+                ArrayList<Skill> sList = skillDAO.getAllSkill();
+
+                request.setAttribute("sList", sList);
+                sendDispatcher(request, response, "skill.jsp");
+            }
+
+            if (service.equalsIgnoreCase("searchSkill")) {
+                ArrayList<Skill> sList = skillDAO.getAllSkill();
+
                 request.setAttribute("sList", sList);
                 sendDispatcher(request, response, "skill.jsp");
             }
             
-            if (service.equalsIgnoreCase("searchSkill")) {
-                SkillDAO sDAO = new SkillDAO();
-                List<Skill> sList;
-                sList = sDAO.getAllSkill();
+            if (service.equalsIgnoreCase("createSkill")) {
+                String sName = request.getParameter("sName");
+                if (skillDAO.findDupSkill(sName)) {
+                    String mess = "Skill existed!";
+                    request.setAttribute("mess", mess);
+                    sendDispatcher(request, response, "createSkill.jsp");
+                }
+                String sDetail = request.getParameter("sDetail");
+                skillDAO.insert(new Skill(sName, sDetail));
                 
-                request.setAttribute("sList", sList);
-                sendDispatcher(request, response, "skill.jsp");
+                sendDispatcher(request, response, "SkillControllerMap?service=allSkill");
             }
         }
     }
-    
+
     public void sendDispatcher(HttpServletRequest request, HttpServletResponse response, String path) {
         try {
             RequestDispatcher rd = request.getRequestDispatcher(path);

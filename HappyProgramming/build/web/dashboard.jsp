@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Dashboard</h1>
+        <a href="AdminControllerMap?service=createSkill">Create Skill</a>
     </body>
 </html>

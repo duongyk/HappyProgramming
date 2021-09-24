@@ -17,6 +17,11 @@ public class Skill {
 
     public Skill() {
     }
+
+    public Skill(String sName, String sDetail) {
+        this.sName = sName;
+        this.sDetail = sDetail;
+    }
     
     public Skill(int sId, String sName, String sDetail) {
         this.sId = sId;

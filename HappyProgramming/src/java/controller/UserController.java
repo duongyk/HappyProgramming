@@ -18,7 +18,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.iplm.RatingDAO;
+import dao.iplm.SkillDAO;
 import dao.iplm.UserDAO;
+import dao.iplm.RequestDAO;
+import entity.Request;
 
 /**
  *
@@ -37,7 +40,8 @@ public class UserController extends HttpServlet {
      */
     UserDAO userDAO = new UserDAO();
     RatingDAO ratingDAO = new RatingDAO();
-
+    RequestDAO requestDAO = new RequestDAO();
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -82,21 +86,44 @@ public class UserController extends HttpServlet {
             }
 
             if (service.equalsIgnoreCase("getRating")) {
-                User x = (User) request.getSession().getAttribute("currUser");
-                ArrayList<Rating> listRating = ratingDAO.getRating(x);
-                request.setAttribute("listRating", listRating);
-                sendDispatcher(request, response, "newjsp.jsp");
+                int mId = Integer.parseInt(request.getParameter("uId"));
+                User mentor = userDAO.getUserById(mId);
+                ArrayList<Rating> rList = ratingDAO.getRating(mentor);
+                request.setAttribute("mentor", mentor);
+                request.setAttribute("rList", rList);
+                
+                sendDispatcher(request, response, "rating.jsp");
             }
 
             if (service.equalsIgnoreCase("rate")) {
                 User x = (User) request.getSession().getAttribute("currUser");
-                int mentorId = Integer.parseInt(request.getParameter("mentorId"));
+                int mId = Integer.parseInt(request.getParameter("mId"));
                 int rate = Integer.parseInt(request.getParameter("rate"));
                 String comment = request.getParameter("comment");
-                Rating rating = new Rating(x.getuId(), mentorId, comment, rate);
+                Rating rating = new Rating(x.getuId(), mId, comment, rate);
                 ratingDAO.insert(rating);
 
-                sendDispatcher(request, response, "newjsp.jsp");
+                sendDispatcher(request, response, "rating.jsp");
+            }
+
+            if (service.equalsIgnoreCase("profile")) {
+                request.setAttribute("user", request.getSession().getAttribute("currUser"));
+                sendDispatcher(request, response, "profile.jsp");
+            }
+
+            if (service.equalsIgnoreCase("info")) {
+                Integer uId = Integer.parseInt(request.getParameter("uId"));
+                User user = userDAO.getUserById(uId);
+                request.setAttribute("user", user);
+                
+                sendDispatcher(request, response, "profile.jsp");
+            }
+            
+            if (service.equalsIgnoreCase("listRequest")) {
+                User x = (User) request.getSession().getAttribute("currUser");
+                ArrayList<Request> rList = requestDAO.getListByMe(x);
+                request.setAttribute("rList", rList);
+                sendDispatcher(request, response, "request.jsp");
             }
         }
     }

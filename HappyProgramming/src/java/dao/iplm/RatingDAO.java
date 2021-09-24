@@ -16,27 +16,34 @@ import java.util.ArrayList;
  *
  * @author Duong
  */
-public class RatingDAO extends MyDAO implements dao.RatingDAO{
+public class RatingDAO extends MyDAO implements dao.RatingDAO {
 
     @Override
     public ArrayList<Rating> getRating(User user) {
         ArrayList<Rating> list = new ArrayList<>();
-        xSql = "select * from [Rating]";
+        xSql = "WITH t AS (SELECT r.[fromId], r.[toId], u.[fullname] AS [to], r.[comment], r.[ratingAmount], "
+                + "r.[ratingDate] FROM [Rating] r INNER JOIN [User] u ON r.[toId]= u.[uId])\n"
+                + "SELECT t.[fromId], t.[toId], u.[fullname] AS [from], t.[to], t.[comment], t.[ratingAmount],"
+                + " t.[ratingDate] FROM t inner join [User] u ON t.[fromId] = u.[uId] WHERE t.[toId] = " + user.getuId();
         try {
             ps = con.prepareStatement(xSql);
             rs = ps.executeQuery();
             Rating x;
             String xComment;
+            String xFrom;
+            String xTo;
             int xFromId, xToId, xRating;
             Timestamp xDate;
 
             while (rs.next()) {
                 xFromId = rs.getInt("fromId");
                 xToId = rs.getInt("toId");
+                xFrom = rs.getString("from");
+                xTo = rs.getString("to");
                 xComment = rs.getString("comment");
                 xRating = rs.getInt("ratingAmount");
                 xDate = rs.getTimestamp("ratingDate");
-                x = new Rating(xFromId, xToId, xComment, xRating, xDate);
+                x = new Rating(xFromId, xToId, xComment, xRating, xDate, xFrom, xTo);
                 list.add(x);
             }
             rs.close();
@@ -60,6 +67,17 @@ public class RatingDAO extends MyDAO implements dao.RatingDAO{
             ps.close();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+    
+        public static void main(String[] args) {
+        RatingDAO r = new RatingDAO();
+        UserDAO u = new UserDAO();
+        User x= u.getUserById(7);
+        ArrayList<Rating> a = r.getRating(x);
+            System.out.println(x.getFullname());
+        for (Rating rate: a){
+            System.out.println(rate.getComment());
         }
     }
 }

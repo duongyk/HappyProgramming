@@ -1,6 +1,6 @@
 <%-- 
-    Document   : dashboard
-    Created on : Sep 21, 2021, 11:06:33 PM
+    Document   : request
+    Created on : Sep 23, 2021, 8:32:12 PM
     Author     : Duong
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="AdminControllerMap?service=createSkill">Create Skill</a>
+        
     </body>
 </html>

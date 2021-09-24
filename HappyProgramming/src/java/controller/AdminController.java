@@ -38,8 +38,8 @@ public class AdminController extends HttpServlet {
             if (service == null) {
                 service = "a";
             }
-            if (service.equalsIgnoreCase("a")) {
-                sendDispatcher(request, response, "login.jsp");
+            if (service.equalsIgnoreCase("createSkill")) {
+                sendDispatcher(request, response, "createSkill.jsp");
             }
         }
     }
