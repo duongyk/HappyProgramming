@@ -19,21 +19,30 @@ public class Request {
     private int fromId;
     private int toId;
     private Date deadlineDate;
-    private Date deadlineHour;
+    //private Time deadlineHour;
     private String status;
 
     public Request() {
     }
 
-    public Request(String title, String content, int fromId, int toId, Date deadlineDate, Date deadlineHour, String status) {
+    public Request(String title, String content, int fromId, int toId, Date deadlineDate, String status) {
         this.title = title;
         this.content = content;
         this.fromId = fromId;
         this.toId = toId;
         this.deadlineDate = deadlineDate;
-        this.deadlineHour = deadlineHour;
         this.status = status;
     }
+
+    public Request(String title, String content, int fromId, int toId, Date deadlineDate) {
+        this.title = title;
+        this.content = content;
+        this.fromId = fromId;
+        this.toId = toId;
+        this.deadlineDate = deadlineDate;
+    }
+    
+    
 
     public int getrId() {
         return rId;
@@ -81,14 +90,6 @@ public class Request {
 
     public void setDeadlineDate(Date deadlineDate) {
         this.deadlineDate = deadlineDate;
-    }
-
-    public Date getDeadlineHour() {
-        return deadlineHour;
-    }
-
-    public void setDeadlineHour(Date deadlineHour) {
-        this.deadlineHour = deadlineHour;
     }
 
     public String getStatus() {

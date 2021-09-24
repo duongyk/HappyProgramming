@@ -19,6 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.iplm.RequestDAO;
 import dao.iplm.UserDAO;
+//import java.text.ParseException; // parse date
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 
 /**
  *
@@ -56,6 +59,23 @@ public class RequestController extends HttpServlet {
             
             if (service.equalsIgnoreCase("createRequest")) {
                 User x = (User) request.getSession().getAttribute("currUser");
+                if(x== null) {
+                    out.print("Access denied!");
+                }
+                else{
+                    RequestDAO rDAO = new RequestDAO();
+                    
+                    String title = request.getParameter("title");
+                    String content = request.getParameter("content");
+                    int fromId = x.getuId();
+                    int toId = Integer.parseInt(request.getParameter("toId"));
+                    Date deadlineDate = Date.valueOf(request.getParameter("deadlineDate"));
+                    
+                    Request req = new Request(title, content, fromId, toId, deadlineDate);
+                    
+                    int n = rDAO.createRequest(req);
+                }
+                
             }
             
         }
