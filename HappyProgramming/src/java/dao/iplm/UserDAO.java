@@ -118,6 +118,37 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         
     }
 
+    //viet thang
+    public int updateUserInfo(int uid, User user) {
+        int status = 0;
+        
+        SimpleDateFormat sdf = 
+                  new SimpleDateFormat("yyyy-MM-dd");
+        
+        String stringDOB = sdf.format(user.getDob());
+        
+        xSql = "update [User]"
+                +" set fullname='"+user.getFullname()+"'"
+                    +" ,uMail='"+user.getuMail()+"'"
+                    +" ,uPhone='"+user.getuPhone()+"'"
+                    +" ,DOB='"+stringDOB+"'"
+                    +" ,gender='"+user.getGender()+"'"
+                +" where uId='"+uid+"'";
+        
+        try {
+            ps = con.prepareStatement(xSql);
+            
+            status = ps.executeUpdate();
+                 
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return status;
+    }
+    
 
 //    public static void main(String[] args) {
 //        UserDAO u = new UserDAO();
