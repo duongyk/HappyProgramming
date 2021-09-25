@@ -9,6 +9,7 @@ import context.DBContext;
 import context.MyDAO;
 import entity.User;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
@@ -101,6 +102,7 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
     }
     public void sighup( String uName ,String uPass, String uMail, String fName, String phone,String uAddress,String sex,String DOB,String  role  ){
         String query=" insert into [User]  value(?,?,?,?,?,?,?,?,?)" ;
+        SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
          try {
             ps = con.prepareStatement(xSql);
             ps.setString(1,uName); ps.setString(2,uPass); ps.setString(3,uMail);ps.setString(4,fName);
