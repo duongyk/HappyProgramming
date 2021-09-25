@@ -84,7 +84,7 @@
                                     <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-17 u-text-body-alt-color u-btn-1">Login</a>
                                     <input type="submit" value="submit" class="u-form-control-hidden">
                                 </div>
-                                <input type="hidden" value="" name="recaptchaResponse">
+                                <input type="hidden" value="login" name="service">
                             </form>
                         </div>
                         <a href="" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-palette-1-base u-btn-2">Forgot password?</a>

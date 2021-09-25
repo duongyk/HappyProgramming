@@ -13,5 +13,6 @@
     </head>
     <body>
         <a href="AdminControllerMap?service=createSkill">Create Skill</a>
+        <a href="AdminControllerMap?service=listSkillAdmin">List Skill</a>
     </body>
 </html>

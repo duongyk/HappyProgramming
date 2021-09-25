@@ -101,7 +101,7 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         return null;
     }
     public void signup( String uName ,String uPass, String uMail, String fName, String phone,String uAddress,String sex,String DOB,int  role  ){
-        String query=" insert into [User]  value(?,?,?,?,?,?,?,?,?)" ;
+        String xSql=" insert into [User]  value(?,?,?,?,?,?,?,?,?)" ;
         SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
          try {
             ps = con.prepareStatement(xSql);
@@ -109,8 +109,7 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
             
             ps.setString(5,phone);;ps.setString(6,uAddress);ps.setString(7,sex); ps.setString(8,DOB); ps.setInt(9, role);
             
-            rs = ps.executeQuery();
-            rs.close();
+            ps.executeUpdate();
             ps.close();
         } catch (Exception e) {
             e.printStackTrace();

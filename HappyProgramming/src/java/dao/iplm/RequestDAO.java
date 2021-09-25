@@ -49,7 +49,6 @@ public class RequestDAO extends MyDAO implements dao.RequestDAO{
     
     @Override
     public int createRequest(Request req) {
-        ArrayList<Request> list = new ArrayList<>();
         int n = 0;
         xSql = "insert into [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) "
                 + "values (?, ?, ?, ?, getdate(), 'pending');";
@@ -60,7 +59,6 @@ public class RequestDAO extends MyDAO implements dao.RequestDAO{
             ps.setInt(3, req.getToId());
             ps.setInt(4, req.getToId());
             ps.setDate(5, req.getDeadlineDate());
-            //ps.setString(6, req.getStatus());
             n = ps.executeUpdate();
             ps.close();
         } catch (Exception e) {

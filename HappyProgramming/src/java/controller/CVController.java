@@ -50,8 +50,7 @@ public class CVController extends HttpServlet {
             //dfg
             if(service.equals("updateCV")) {
                 int uid = Integer.parseInt(request.getParameter("uid"));
-                     
-               
+                
                 CV mentorCV = cvdao.getMentorCV(uid);
                 User mentorProfile = userdao.getUserById(uid);
                 

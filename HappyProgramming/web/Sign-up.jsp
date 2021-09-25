@@ -63,7 +63,9 @@
             <div class="u-clearfix u-sheet u-sheet-1">
                 <img class="u-image u-image-default u-image-1" src="images/signup.png" alt="" data-image-width="512" data-image-height="834">
                 <div class="u-form u-form-1">
-                    <form action="#" method="POST" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 5px;">
+                    <form action="UserControllerMap" method="POST" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 5px;">
+                        
+                        <input type="hidden" value="sign-up" name="service">
                         <div class="u-form-group u-form-group-1">
                             <label for="text-891d" class="u-form-control-hidden u-label"></label>
                             <input type="text" placeholder="User name" id="text-891d" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
@@ -96,8 +98,8 @@
                             <label for="select-6004" class="u-label">Sex</label>
                             <div class="u-form-select-wrapper">
                                 <select id="select-6004" name="sex" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
+                                    <option name="gender" value="Male">Male</option>
+                                    <option name="gender" value="Female">Female</option>
                                 </select>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                             </div>
@@ -110,19 +112,17 @@
                             <label for="select-8da9" class="u-label">Sign up to</label>
                             <div class="u-form-select-wrapper">
                                 <select id="select-8da9" name="role" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
-                                    <option value="Mentor">Mentor</option>
-                                    <option value="Mentee">Mentee</option>
+                                    <option name="role" value="1">Mentee</option>
+                                    <option name="role" value="2">Mentor</option>
                                 </select>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                             </div>
                         </div>
-                        <div class="u-align-center u-form-group u-form-submit">
-                            <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Submit</a>
+                        
+                        <div class="u-align-center u-form-group u-form-submit"> 
+                            <a href="UserControllerMap?service=sign-up" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-17 u-text-body-alt-color u-btn-1">Login</a>
                             <input type="submit" value="submit" class="u-form-control-hidden">
                         </div>
-                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                        <input type="hidden" value="" name="recaptchaResponse">
                     </form>
                 </div>
             </div>

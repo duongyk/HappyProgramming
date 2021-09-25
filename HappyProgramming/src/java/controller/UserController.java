@@ -41,7 +41,7 @@ public class UserController extends HttpServlet {
     UserDAO userDAO = new UserDAO();
     RatingDAO ratingDAO = new RatingDAO();
     RequestDAO requestDAO = new RequestDAO();
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -80,37 +80,40 @@ public class UserController extends HttpServlet {
                 }
 
             }
-             
-        
-        
-        
+
             if (service.equalsIgnoreCase("sign-up")) {
                 String userName = request.getParameter("username");
                 String password = request.getParameter("password");
-                 String mail = request.getParameter("mail");
-                 String repass = request.getParameter("confirm");
-                 String fname = request.getParameter("fullname");
-                 String phone = request.getParameter("phone");
-                 String address = request.getParameter("text-1");
-                 String sex = request.getParameter("sex");
-                 String DOB = request.getParameter("text-4");
-                 String role = request.getParameter("role");
-                 if (!password.equals(repass)){
-                     sendDispatcher(request, response, "Sign-up.jsp");
-                 }else{
-                   UserDAO dao = new UserDAO() ;
-                   User a = dao.checkAccount(userName);
-                   if (a==null){ // check xem ton tai chua, chua thi dc sign up
-                      
-                       dao.signup(userName, repass, mail, fname, phone, address, sex, DOB, Integer.parseInt(role));
-                       response.sendRedirect("Sign-in");// khi dang ki hoan tat se cha nguoi dung ve page login
-                   }else { //neu co roi se day ve trang sighn up
-                       sendDispatcher(request, response, "Sign-up.jsp");
-                   }
-                 }
+                String mail = request.getParameter("mail");
+                String repass = request.getParameter("confirm");
+                String fname = request.getParameter("fullname");
+                String phone = request.getParameter("phone");
+                String address = request.getParameter("text-1");
+                String sex = request.getParameter("sex");
+                String DOB = request.getParameter("text-4");
+                Integer role = Integer.parseInt(request.getParameter("role"));
+                if (!password.equals(repass)) {
+                    // js: ko trung pass
+                    sendDispatcher(request, response, "Sign-up.jsp");
+                }
+                
+                User a = userDAO.checkAccount(userName);
+                if (a == null) { // check xem ton tai chua, chua thi dc sign up
+                    userDAO.signup(userName, repass, mail, fname, phone, address, sex, DOB, role);
+                    if (role==1) {
+                        response.sendRedirect("Sign-in.jsp");
+                    } else {
+                        response.sendRedirect("Sign-in.jsp");
+                        //response.sendRedirect("CVControllerMap?service=createCV&uId="+a.getuId());
+                    }
+                    // khi dang ki hoan tat se cha nguoi dung ve page login
+                } else { //neu co roi se day ve trang sighn up
+                    // mess= "user name existed!"
+                    sendDispatcher(request, response, "Sign-up.jsp");
+                }
+
             }
-                 
-                 
+
             if (service.equalsIgnoreCase("logout")) {
 
             }
@@ -121,7 +124,7 @@ public class UserController extends HttpServlet {
                 ArrayList<Rating> rList = ratingDAO.getRating(mentor);
                 request.setAttribute("mentor", mentor);
                 request.setAttribute("rList", rList);
-                
+
                 sendDispatcher(request, response, "rating.jsp");
             }
 
@@ -145,10 +148,10 @@ public class UserController extends HttpServlet {
                 Integer uId = Integer.parseInt(request.getParameter("uId"));
                 User user = userDAO.getUserById(uId);
                 request.setAttribute("user", user);
-                
+
                 sendDispatcher(request, response, "profile.jsp");
             }
-            
+
             if (service.equalsIgnoreCase("listRequest")) {
                 User x = (User) request.getSession().getAttribute("currUser");
                 ArrayList<Request> rList = requestDAO.getListByMe(x);
