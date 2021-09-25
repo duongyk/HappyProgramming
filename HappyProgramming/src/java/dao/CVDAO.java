@@ -13,9 +13,7 @@ import entity.CV;
  */
 public interface CVDAO {
 
-    public CV getMentorCV(int uid);
+    public CV getMentorCV(String uid);
 
     public void insertCV(String uid, CV newCV);
-    
-    public int updateCV(int uid, CV newCV);
 }

@@ -20,15 +20,13 @@ public class CV {
     public CV() {
     }
 
-    public CV(int uId, String profession, String professionIntro, String serviceDescript, String achivement) {
+    public CV(int uId, String profession, String professionIntro, String service, String serviceDescript, String achivement) {
         this.uId = uId;
         this.profession = profession;
         this.professionIntro = professionIntro;
         this.serviceDescript = serviceDescript;
         this.achivement = achivement;
     }
-
-   
 
     public int getuId() {
         return uId;
