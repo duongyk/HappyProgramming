@@ -100,7 +100,7 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         }
         return null;
     }
-    public void sighup( String uName ,String uPass, String uMail, String fName, String phone,String uAddress,String sex,String DOB,int  role  ){
+    public void signup( String uName ,String uPass, String uMail, String fName, String phone,String uAddress,String sex,String DOB,int  role  ){
         String query=" insert into [User]  value(?,?,?,?,?,?,?,?,?)" ;
         SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
          try {
