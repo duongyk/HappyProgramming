@@ -18,9 +18,9 @@ import java.util.logging.Logger;
 public class CVDAO extends MyDAO implements dao.CVDAO {
 
     @Override
-    public CV getMentorCV(int uid) {
+    public CV getMentorCV(String uid) {
 
-        CV cv = new CV();
+        CV cv = null;
 
         xSql = "select * from [CV] where uid='" + uid + "'";
 
@@ -60,26 +60,4 @@ public class CVDAO extends MyDAO implements dao.CVDAO {
         }
     }
 
-    @Override
-    public int updateCV(int uid, CV newCV) {
-        int status = 0;
-        
-        xSql = "update [CV]"
-                + " set profession='"+newCV.getProfession()+"'"
-                + " , professionIntro='"+newCV.getProfessionIntro()+"'"
-                + " , serviceDescript='"+newCV.getServiceDescript()+"'"
-                + " , achievement='"+newCV.getAchivement()+"'"
-                + " where uid='"+uid+"'";
-
-        try {
-            ps = con.prepareStatement(xSql);
-
-            status = ps.executeUpdate();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(CVDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return status;
-    }
 }
