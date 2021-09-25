@@ -102,7 +102,7 @@ public class UserController extends HttpServlet {
                    User a = dao.checkAccount(userName);
                    if (a==null){ // check xem ton tai chua, chua thi dc sign up
                       
-                       dao.sighup(userName, repass, mail, fname, phone, address, sex, DOB, Integer.parseInt(role));
+                       dao.signup(userName, repass, mail, fname, phone, address, sex, DOB, Integer.parseInt(role));
                        response.sendRedirect("Sign-in");// khi dang ki hoan tat se cha nguoi dung ve page login
                    }else { //neu co roi se day ve trang sighn up
                        sendDispatcher(request, response, "Sign-up.jsp");
