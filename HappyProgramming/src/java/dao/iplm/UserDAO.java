@@ -100,14 +100,14 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         }
         return null;
     }
-    public void sighup( String uName ,String uPass, String uMail, String fName, String phone,String uAddress,String sex,String DOB,String  role  ){
+    public void sighup( String uName ,String uPass, String uMail, String fName, String phone,String uAddress,String sex,String DOB,int  role  ){
         String query=" insert into [User]  value(?,?,?,?,?,?,?,?,?)" ;
         SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
          try {
             ps = con.prepareStatement(xSql);
             ps.setString(1,uName); ps.setString(2,uPass); ps.setString(3,uMail);ps.setString(4,fName);
             
-            ps.setString(5,phone);;ps.setString(6,uAddress);ps.setString(7,sex); ps.setString(8,DOB); ps.setString(9, role);
+            ps.setString(5,phone);;ps.setString(6,uAddress);ps.setString(7,sex); ps.setString(8,DOB); ps.setInt(9, role);
             
             rs = ps.executeQuery();
             rs.close();
