@@ -80,7 +80,37 @@ public class UserController extends HttpServlet {
                 }
 
             }
-
+             
+        
+        
+        
+            if (service.equalsIgnoreCase("sign-up")) {
+                String userName = request.getParameter("username");
+                String password = request.getParameter("password");
+                 String mail = request.getParameter("mail");
+                 String repass = request.getParameter("confirm");
+                 String fname = request.getParameter("fullname");
+                 String phone = request.getParameter("phone");
+                 String address = request.getParameter("text-1");
+                 String sex = request.getParameter("sex");
+                  String DOB = request.getParameter("text-4");
+                   String role = request.getParameter("role");
+                 if (!password.equals(repass)){
+                     sendDispatcher(request, response, "Sign-up.jsp");
+                 }else{
+                   UserDAO dao = new UserDAO() ;
+                   User a = dao.checkAccount(userName);
+                   if (a==null){ // check xem ton tai chua, chua thi dc sign up
+                      
+                       dao.sighup(userName, repass, mail, fname, phone, address, sex, DOB, role);
+                       response.sendRedirect("Sign-in");// khi dang ki hoan tat se cha nguoi dung ve page login
+                   }else { //neu co roi se day ve trang sighn up
+                       sendDispatcher(request, response, "Sign-up.jsp");
+                   }
+                 }
+            }
+                 
+                 
             if (service.equalsIgnoreCase("logout")) {
 
             }

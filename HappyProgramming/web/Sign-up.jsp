@@ -1,6 +1,6 @@
-<%-- 
-    Document   : loginJsp
-    Created on : Sep 21, 2021, 8:27:13 PM
++<%-- 
+    Document   : Sign-up
+    Created on : Sep 24, 2021, 9:08:19 AM
     Author     : QMC
 --%>
 
@@ -13,18 +13,17 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="page_type" content="np-template-header-footer-from-plugin">
-        <title>Sign in</title>
+        <title>Sign up</title>
         <link rel="stylesheet" href="css/nicepage.css" media="screen">
-        <link rel="stylesheet" href="css/Sign-in.css" media="screen">
+        <link rel="stylesheet" href="css/Sign-up.css" media="screen">
         <script class="u-script" type="text/javascript" src="js/jquery.js" defer=""></script>
         <script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
         <meta name="generator" content="Nicepage 3.25.0, nicepage.com">
         <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
 
-
         <meta name="theme-color" content="#478ac9">
-        <meta property="og:title" content="Sign in">
+        <meta property="og:title" content="Sign up">
         <meta property="og:description" content="">
         <meta property="og:type" content="website">
     </head>
@@ -49,48 +48,83 @@
                 <div class="u-custom-menu u-nav-container-collapse">
                     <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
                         <div class="u-inner-container-layout u-sidenav-overflow">
-                            <div class="u-menu-close"></div> 
+                            <div class="u-menu-close"></div>
                             <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="All-mentors.html" style="padding: 10px 36px;">All mentors</a>
                                 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="All-skills.html" style="padding: 10px 36px;">All skills</a>
-                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-in.jsp" style="padding: 10px 36px;">Sign in</a> 
+                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-in.jsp" style="padding: 10px 36px;">Sign in</a>
                                 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-up.jsp" style="padding: 10px 36px;">Sign up</a>
-                                </li></ul> 
+                                </li></ul>
                         </div>
                     </div>
                     <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
                 </div>
             </nav></header>
-        <section class="u-align-center u-clearfix u-custom-color-2 u-section-1" id="sec-eec3">
+        <section class="u-clearfix u-custom-color-2 u-section-1" id="sec-ebef">
             <div class="u-clearfix u-sheet u-sheet-1">
-                <div class="u-align-center u-container-style u-group u-radius-50 u-shape-round u-white u-group-1">
-                    <div class="u-container-layout u-container-layout-1">
-                        <h3 class="u-text u-text-1">Sign In</h3>
-                        <div class="u-form u-login-control u-form-1">
-                            <form action="UserControllerMap" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-35 u-form-vertical u-inner-form" source="custom" name="form-2" style="padding: 10px;">
-                                <div class="u-form-group u-form-name">
-                                    <label for="username-708d" class="u-form-control-hidden u-label"></label>
-                                    <input type="text" placeholder="Enter your Username" id="username-708d" name="username" class="u-grey-5 u-input u-input-rectangle" required="">
-                                </div>
-                                <div class="u-form-group u-form-password">
-                                    <label for="password-708d" class="u-form-control-hidden u-label"></label>
-                                    <input type="text" placeholder="Enter your Password" id="password-708d" name="password" class="u-grey-5 u-input u-input-rectangle" required="">
-                                </div>
-                                <div class="u-form-checkbox u-form-group">
-                                    <input type="checkbox" id="checkbox-708d" name="remember" value="On">
-                                    <label for="checkbox-708d" class="u-label">Remember me</label>
-                                </div>
-                                <div class="u-align-center u-form-group u-form-submit"> 
-                                    
-                                    <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-17 u-text-body-alt-color u-btn-1">Login</a>
-                                    <input type="submit" value="submit" class="u-form-control-hidden">
-                                </div>
-                                <input type="hidden" value="" name="recaptchaResponse">
-                            </form>
+                <img class="u-image u-image-default u-image-1" src="images/signup.png" alt="" data-image-width="512" data-image-height="834">
+                <div class="u-form u-form-1">
+                    <form action="#" method="POST" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 5px;">
+                        <div class="u-form-group u-form-group-1">
+                            <label for="text-891d" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="User name" id="text-891d" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
                         </div>
-                        <a href="" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-palette-1-base u-btn-2">Forgot password?</a>
-                    </div>
+                        <div class="u-form-group u-form-group-2">
+                            <label for="text-b9a0" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="Mail" id="text-b9a0" name="mail" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                        </div>
+                        <div class="u-form-group u-form-group-3">
+                            <label for="text-1c7c" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="Password" id="text-1c7c" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                        </div>
+                        <div class="u-form-group u-form-group-4">
+                            <label for="text-b048" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="Confirm password" id="text-b048" name="confirm" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                        </div>
+                        <div class="u-form-group u-form-group-5">
+                            <label for="text-3911" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="fullname" id="text-3911" name="fullname" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                        </div>
+                        <div class="u-form-group u-form-phone u-form-group-6">
+                            <label for="text-47b9" class="u-form-control-hidden u-label"></label>
+                            <input type="tel" placeholder="phone" id="text-47b9" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" pattern="\+?\d{0,2}[\s\(\-]?([0-9]{3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})">
+                        </div>
+                        <div class="u-form-group u-form-group-7">
+                            <label for="text-0855" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="address" id="text-0855" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                        </div>
+                        <div class="u-form-group u-form-select u-form-group-8">
+                            <label for="select-6004" class="u-label">Sex</label>
+                            <div class="u-form-select-wrapper">
+                                <select id="select-6004" name="sex" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="u-form-date u-form-group u-form-group-9">
+                            <label for="text-13e0" class="u-label">Date of birth</label>
+                            <input type="date" id="text-13e0" name="text-4" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                        </div>
+                        <div class="u-form-group u-form-select u-form-group-10">
+                            <label for="select-8da9" class="u-label">Sign up to</label>
+                            <div class="u-form-select-wrapper">
+                                <select id="select-8da9" name="role" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                                    <option value="Mentor">Mentor</option>
+                                    <option value="Mentee">Mentee</option>
+                                </select>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="u-align-center u-form-group u-form-submit">
+                            <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Submit</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                        </div>
+                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+                    </form>
                 </div>
-                <img class="u-image u-image-default u-image-1" src="images/login.png" alt="" data-image-width="764" data-image-height="805">
             </div>
         </section>
 

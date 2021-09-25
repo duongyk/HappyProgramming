@@ -42,8 +42,8 @@
                 <div class="u-custom-menu u-nav-container">
                     <ul class="u-custom-font u-nav u-spacing-30 u-text-font u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="All-mentors.html" style="padding: 10px 36px;">All mentors</a>
                         </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="All-skills.html" style="padding: 10px 36px;">All skills</a>
-                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-in.html" style="padding: 10px 36px;">Sign in</a>
-                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-up.html" style="padding: 10px 36px;">Sign up</a>
+                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-in.jsp" style="padding: 10px 36px;">Sign in</a>
+                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-up.jsp" style="padding: 10px 36px;">Sign up</a>
                         </li></ul>
                 </div>
                 <div class="u-custom-menu u-nav-container-collapse">
@@ -52,8 +52,8 @@
                             <div class="u-menu-close"></div> 
                             <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="All-mentors.html" style="padding: 10px 36px;">All mentors</a>
                                 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="All-skills.html" style="padding: 10px 36px;">All skills</a>
-                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-in.html" style="padding: 10px 36px;">Sign in</a> 
-                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-up.html" style="padding: 10px 36px;">Sign up</a>
+                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-in.jsp" style="padding: 10px 36px;">Sign in</a> 
+                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-up.jsp" style="padding: 10px 36px;">Sign up</a>
                                 </li></ul> 
                         </div>
                     </div>

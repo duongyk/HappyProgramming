@@ -79,6 +79,43 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         }
         return null;
     }
+    public User checkAccount(String xName) { // check xem tài khoản này đã tồn tại trong db chưa
+
+        xSql = "select * from [User] where username=? ";
+
+        try {
+            ps = con.prepareStatement(xSql);
+            ps.setString(1, xName);// neu user co roi thi se tra ve 1 object con chua co thi tra ve null        
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return new User(rs.getInt("uId"), rs.getString("username"), rs.getString("password"),
+                        rs.getString("fullname"), rs.getString("uMail"), rs.getString("uPhone"),
+                        rs.getDate("dob"), rs.getString("gender"), rs.getString("uAvatar"), rs.getInt("uRole"));
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public void sighup( String uName ,String uPass, String uMail, String fName, String phone,String uAddress,String sex,String DOB,String  role  ){
+        String query=" insert into [User]  value(?,?,?,?,?,?,?,?,?)" ;
+         try {
+            ps = con.prepareStatement(xSql);
+            ps.setString(1,uName); ps.setString(2,uPass); ps.setString(3,uMail);ps.setString(4,fName);
+            
+            ps.setString(5,phone);;ps.setString(6,uAddress);ps.setString(7,sex); ps.setString(8,DOB); ps.setString(9, role);
+            
+            rs = ps.executeQuery();
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
+
 
 //    public static void main(String[] args) {
 //        UserDAO u = new UserDAO();
