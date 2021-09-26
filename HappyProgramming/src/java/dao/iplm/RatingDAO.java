@@ -69,15 +69,15 @@ public class RatingDAO extends MyDAO implements dao.RatingDAO {
             e.printStackTrace();
         }
     }
-    
-        public static void main(String[] args) {
-        RatingDAO r = new RatingDAO();
-        UserDAO u = new UserDAO();
-        User x= u.getUserById(7);
-        ArrayList<Rating> a = r.getRating(x);
-            System.out.println(x.getFullname());
-        for (Rating rate: a){
-            System.out.println(rate.getComment());
-        }
-    }
+//    
+//        public static void main(String[] args) {
+//        RatingDAO r = new RatingDAO();
+//        UserDAO u = new UserDAO();
+//        User x= u.getUserById(7);
+//        ArrayList<Rating> a = r.getRating(x);
+//            System.out.println(x.getFullname());
+//        for (Rating rate: a){
+//            System.out.println(rate.getComment());
+//        }
+//    }
 }
