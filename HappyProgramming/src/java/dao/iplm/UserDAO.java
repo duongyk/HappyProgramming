@@ -135,19 +135,19 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
                     +" ,gender='"+user.getGender()+"'"
                 +" where uId='"+uid+"'";
         
-        System.out.println(xSql);
+        //System.out.println(xSql);
         
-//        try {
-//            ps = con.prepareStatement(xSql);
-//            
-//            status = ps.executeUpdate();
-//                 
-//            rs.close();
-//            ps.close();
-//            
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+       try {
+            ps = con.prepareStatement(xSql);
+            
+            status = ps.executeUpdate();
+                 
+            rs.close();
+            ps.close();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
         return status;
     }
@@ -158,8 +158,10 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
 //        User x= u.getUser("admin", "administrator");
 //        if (x!=null) System.out.println(x.getuRole());
             
-          Date date = new Date();
-          User user = new User(1, "Mentee1" , "password", "fullname", "umail", "uPhone",date , "gender", "uAvatar", 1);
-          
+          // test update user function
+//          Date date = new Date();
+//          User user = new User(1, "Mentee1" , "Daxua01", "Master Yi", "menteeno1@fpt.edu.vn", "0932322287",date , "Male", "", 1);
+//          
+//          u.updateUserInfo(1, user);
     }
 }

@@ -99,11 +99,14 @@ public class CVController extends HttpServlet {
                 // get information
                 
                 int uid = Integer.parseInt(request.getParameter("uid"));
+                //System.out.println("uid "+uid);
                 
                 String username = request.getParameter("username");
+                //System.out.println("username "+username);
+
                 
                 String fullname= request.getParameter("fullname");
-                
+                //System.out.println("fullname "+fullname);
                 
                 SimpleDateFormat dateFormat = 
                   new SimpleDateFormat("yyyy-MM-dd");
@@ -112,23 +115,31 @@ public class CVController extends HttpServlet {
                 
                 try {
                     dob = dateFormat.parse(request.getParameter("dob"));
+                    //System.out.println(request.getParameter("dob"));
                 } catch (ParseException ex) {
                     Logger.getLogger(CVController.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
                 String sex = request.getParameter("sex");
+                //System.out.println("sex "+sex);
                 
                 String mail = request.getParameter("mail");
+                //System.out.println("mail "+mail);
                 
                 String phone = request.getParameter("phone");
+                //System.out.println("phone "+phone);
                 
                 String achievement = request.getParameter("achievement");
+                //System.out.println("achievement "+achievement);
                 
                 String  profession = request.getParameter("profession");
+                //System.out.println("profession "+profession);
                 
                 String professionIntro = request.getParameter("professionIntro");
+                //System.out.println("professionIntro "+professionIntro);
                 
                 String serviceDescription = request.getParameter("serviceDescription");
+                //System.out.println("serviceDescription "+serviceDescription);
                 
                 String[] skill_id = request.getParameterValues("skills");
                 
@@ -136,7 +147,7 @@ public class CVController extends HttpServlet {
                 
                 //       update user 
                 
-                User mentorInfo = new User(uid, "", phone, fullname, mail, phone, dob, phone, mail, 2);
+                User mentorInfo = new User(uid, "", "", fullname, mail, phone, dob, phone, "", 2);
                 
                 CV mentorCV = new CV(uid, profession, professionIntro, serviceDescription, achievement);
           

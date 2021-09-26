@@ -81,7 +81,7 @@
                         <input type="hidden" name="uid" value="<%= mentorProfile.getuId() %>" readonly="readonly" value="<%= mentorProfile.getuId() %>"/>
                         <div class="u-form-group u-form-group-1">
                             <label for="text-891d" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="User name" id="text-891d" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<%= mentorProfile.getUsername() %>">
+                            <input type="text" placeholder="User name" id="text-891d" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<%= mentorProfile.getUsername() %>" readonly="readonly">
                         </div>
                         <div class="u-form-group u-form-group-2">
                             <label for="text-3911" class="u-form-control-hidden u-label"></label>
