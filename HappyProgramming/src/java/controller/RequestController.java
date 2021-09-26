@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.iplm.RequestDAO;
+import dao.iplm.RequestSkillDAO;
 import dao.iplm.UserDAO;
 //import java.text.ParseException; // parse date
 import java.text.SimpleDateFormat;
@@ -41,6 +42,7 @@ public class RequestController extends HttpServlet {
     
     UserDAO userDao = new UserDAO();
     RequestDAO requestDAO = new RequestDAO();
+    RequestSkillDAO requestSkillDAO = new RequestSkillDAO();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -73,7 +75,10 @@ public class RequestController extends HttpServlet {
                     
                     Request req = new Request(title, content, fromId, toId, deadlineDate);
                     
-                    int n = rDAO.createRequest(req);
+                    String arr[] = request.getParameterValues("sId");
+                    for (String str : arr) {
+                        requestSkillDAO.skillRequest(Integer.parseInt(str));S
+                    }
                 }
                 
             }

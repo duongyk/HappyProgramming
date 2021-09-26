@@ -50,17 +50,10 @@ public class RequestSkillDAO extends MyDAO implements dao.RequestSkillDAO{
     }
     
 //    @Override
-    public int skillRequest() {
-//        ArrayList<Skill> sId = new ArrayList<>();
+    public int skillRequest(int sId) {
         int n = 0;
-        int l = 0;
-//        ArrayList<>
         RequestSkillDAO dao = new RequestSkillDAO();
         int maxId = dao.getRequestMaxId();
-        ArrayList<Skill> sId = dao.getList();
-        for (Skill x : sId) {
-            l = x.getsId();
-        }
         xSql = "insert into [RequestSkill](rId,[sId]) values ("+ maxId +" ,"+ sId +")";
         try {
             ps = con.prepareStatement(xSql);
@@ -72,12 +65,12 @@ public class RequestSkillDAO extends MyDAO implements dao.RequestSkillDAO{
         return n;
     }
     
-    public static void main(String[] args) {
-        RequestSkillDAO dao = new RequestSkillDAO();
-//        ArrayList<Skill> list = dao.getList();
-//        for (Skill x : list) {
-//            System.out.println(x.getsId());
-//        }
-        System.out.println(dao.getList());
-    }
+//    public static void main(String[] args) {
+//        RequestSkillDAO dao = new RequestSkillDAO();
+////        ArrayList<Skill> list = dao.getList();
+////        for (Skill x : list) {
+////            System.out.println(x.getsId());
+////        }
+//        System.out.println(dao.getList());
+//    }
 }
