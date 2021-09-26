@@ -104,10 +104,11 @@ public class CVController extends HttpServlet {
                 
                 String fullname= request.getParameter("fullname");
                 
+                
                 SimpleDateFormat dateFormat = 
                   new SimpleDateFormat("yyyy-MM-dd");
                 
-                Date dob = null;
+                Date dob = new Date();
                 
                 try {
                     dob = dateFormat.parse(request.getParameter("dob"));

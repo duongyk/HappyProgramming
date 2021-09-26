@@ -19,17 +19,17 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
     public ArrayList<Skill> getAllSkill() {
         ArrayList<Skill> list = new ArrayList<>();
         xSql = "select * from [Skill]";
-//        int id;
+        int id;
         String name, detail;
         Skill s;
         try {
             ps = con.prepareStatement(xSql);
             rs = ps.executeQuery();
             while (rs.next()) {
-//                id = rs.getInt("sId");
+                id = rs.getInt("sId");
                 name = rs.getString("sName");
                 detail = rs.getString("sDetail");
-                s = new Skill(name, detail);
+                s = new Skill(id, name, detail);
                 list.add(s);
             }
             rs.close();
@@ -114,7 +114,7 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
 //        SkillDAO u = new SkillDAO();
 //        ArrayList<Skill> x= u.getAllSkill();
 //        for (Skill s: x){
-//            System.out.println(s.getsName());
+//            System.out.println(s.getsName()+" "+s.getsId());
 //        }
 //    }
 }

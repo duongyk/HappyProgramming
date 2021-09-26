@@ -90,11 +90,11 @@ public class SkillMentorDAO extends MyDAO implements dao.SkillMentorDAO{
             String sql_insert = "insert into SkillMentor (sId)"
                     + " values (?)"
                     + " where uId='"+uId+"'";
-            PreparedStatement ps = con.prepareStatement(sql_insert);
+            PreparedStatement ps2 = con.prepareStatement(sql_insert);
             
             for(String skill_id : skills) {
-                ps.setString(0, skill_id);
-                status = ps.executeUpdate();
+                ps2.setString(1, skill_id);
+                status = ps2.executeUpdate();
             }
             
         } catch (Exception e) {

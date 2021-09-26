@@ -11,6 +11,7 @@ import entity.User;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -134,24 +135,31 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
                     +" ,gender='"+user.getGender()+"'"
                 +" where uId='"+uid+"'";
         
-        try {
-            ps = con.prepareStatement(xSql);
-            
-            status = ps.executeUpdate();
-                 
-            rs.close();
-            ps.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println(xSql);
+        
+//        try {
+//            ps = con.prepareStatement(xSql);
+//            
+//            status = ps.executeUpdate();
+//                 
+//            rs.close();
+//            ps.close();
+//            
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         
         return status;
     }
     
 
-//    public static void main(String[] args) {
-//        UserDAO u = new UserDAO();
+    public static void main(String[] args) {
+        UserDAO u = new UserDAO();
 //        User x= u.getUser("admin", "administrator");
 //        if (x!=null) System.out.println(x.getuRole());
-//    }
+            
+          Date date = new Date();
+          User user = new User(1, "Mentee1" , "password", "fullname", "umail", "uPhone",date , "gender", "uAvatar", 1);
+          
+    }
 }
