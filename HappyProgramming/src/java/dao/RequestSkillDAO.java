@@ -10,5 +10,6 @@ package dao;
  * @author Duong
  */
 public interface RequestSkillDAO {
-    
+    public int getRequestMaxId();
+//    public int skillRequest(ArrayList<Skill> sId);
 }
