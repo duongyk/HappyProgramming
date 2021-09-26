@@ -85,6 +85,31 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
         }
         return false;
     }
+    
+    //viet thang
+    @Override
+    public Skill getSkillById(String sId) {
+        Skill skill = new Skill();
+        
+        xSql = "select * from [Skill] where sId='"+sId+"'";
+        
+        try {
+            ps = con.prepareStatement(xSql);
+            rs = ps.executeQuery();
+            
+            if (rs.next()) {
+                skill.setsId(rs.getInt("sId"));
+                skill.setsName(rs.getString("sName"));
+                skill.setsDetail(rs.getString("sDetail"));
+            } 
+                    
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return skill;
+    }
+    
 //    public static void main(String[] args) {
 //        SkillDAO u = new SkillDAO();
 //        ArrayList<Skill> x= u.getAllSkill();

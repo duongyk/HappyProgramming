@@ -15,4 +15,6 @@ import java.util.ArrayList;
 public interface SkillDAO {
     public ArrayList<Skill> getAllSkill();
     public ArrayList<Skill> getSkillByName(String sName);
+    
+    public Skill getSkillById(String sId);
 }
