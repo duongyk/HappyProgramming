@@ -7,6 +7,7 @@ package dao.iplm;
 
 import context.MyDAO;
 import entity.Skill;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 /**
@@ -69,6 +70,38 @@ public class SkillMentorDAO extends MyDAO implements dao.SkillMentorDAO{
         }
         
         return skill_Id_List;
+    }
+
+    @Override
+    public int updateMentorSkill(int uId, String[] skills) {
+        
+        int status = 0;
+        
+        try {
+            
+            //delete all skill of mentor
+            xSql = "delete from SkillMentor where uId='"+uId+"'";
+            
+            ps = con.prepareStatement(xSql);
+            
+            status = ps.executeUpdate();
+              
+            // update with new skill
+            String sql_insert = "insert into SkillMentor (sId)"
+                    + " values (?)"
+                    + " where uId='"+uId+"'";
+            PreparedStatement ps = con.prepareStatement(sql_insert);
+            
+            for(String skill_id : skills) {
+                ps.setString(0, skill_id);
+                status = ps.executeUpdate();
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return status;
     }
     
     

@@ -15,4 +15,6 @@ import java.util.ArrayList;
 public interface SkillMentorDAO {
     public ArrayList<Skill> getAll_Skill_Mentor(String uId);
     public ArrayList<String> getAll_Id_Skill_Mentor(String uId);
+    
+    public int updateMentorSkill(int uid, String[] skills);
 }

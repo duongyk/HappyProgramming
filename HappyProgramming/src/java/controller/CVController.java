@@ -79,7 +79,24 @@ public class CVController extends HttpServlet {
 
             }
             
+            /*
             if(service.equals("submitFormUpdate")) {
+                String[] skill_id_list = request.getParameterValues("skills");
+                
+                SkillDAO skilldao = new SkillDAO();
+                
+                for(String id: skill_id_list) {
+                    
+                    Skill skill = skilldao.getSkillById(id);
+                    
+                    out.println("<h3>"+skill.getsName()+"</h3>");
+                }
+            }
+            */
+            
+            if(service.equals("submitFormUpdate")) {
+                
+                // get information
                 
                 int uid = Integer.parseInt(request.getParameter("uid"));
                 
@@ -112,15 +129,25 @@ public class CVController extends HttpServlet {
                 
                 String serviceDescription = request.getParameter("serviceDescription");
                 
+                String[] skill_id = request.getParameterValues("skills");
+                
+                //----------------------------------
+                
+                //       update user 
+                
                 User mentorInfo = new User(uid, "", phone, fullname, mail, phone, dob, phone, mail, 2);
                 
                 CV mentorCV = new CV(uid, profession, professionIntro, serviceDescription, achievement);
-
+          
                 userdao.updateUserInfo(uid, mentorInfo);
                 cvdao.updateCV(uid, mentorCV);
+                smdao.updateMentorSkill(uid, skill_id);
+                
+                // ----------------------------------------
                 
                 response.sendRedirect("demoMentorList.jsp");
             }
+            
             
             if(service.equals("viewCVSkill")) {
                 

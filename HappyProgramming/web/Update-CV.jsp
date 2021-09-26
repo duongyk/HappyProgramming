@@ -137,11 +137,11 @@
                             <%
                                 if (mentor_skill_Id.contains(""+skill.getsId())) {
                             %>
-                            <input type="checkbox" name="skill[]" value="<%=skill.getsId() %>" checked>
+                            <input type="checkbox" name="skills" value="<%=skill.getsId() %>" checked>
                             <%
                                 } else {
                             %>
-                            <input type="checkbox" name="skill[]" value="<%=skill.getsId() %>">
+                            <input type="checkbox" name="skills" value="<%=skill.getsId() %>">
                             <%
                                 }
                             %>
