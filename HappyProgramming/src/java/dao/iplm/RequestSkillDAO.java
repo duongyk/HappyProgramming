@@ -78,6 +78,6 @@ public class RequestSkillDAO extends MyDAO implements dao.RequestSkillDAO{
 //        for (Skill x : list) {
 //            System.out.println(x.getsId());
 //        }
-        System.out.println(dao.skillRequest());
+        System.out.println(dao.getList());
     }
 }
