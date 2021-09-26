@@ -6,6 +6,7 @@
 package dao;
 
 import entity.CV;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,4 +19,6 @@ public interface CVDAO {
     public void insertCV(String uid, CV newCV);
     
     public int updateCV(int uid, CV newCV);
+    
+    public ArrayList<CV> getAllMentorCV();
 }

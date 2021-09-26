@@ -6,13 +6,16 @@
 package controller;
 
 import dao.iplm.CVDAO;
+import dao.iplm.SkillMentorDAO;
 import dao.iplm.UserDAO;
 import entity.CV;
+import entity.Skill;
 import entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -105,6 +108,23 @@ public class CVController extends HttpServlet {
                 cvdao.updateCV(uid, mentorCV);
                 
                 response.sendRedirect("demoMentorList.jsp");
+            }
+            
+            if(service.equals("viewCVSkill")) {
+                
+                String uid = request.getParameter("uid");
+                
+                SkillMentorDAO smdao = new SkillMentorDAO();
+                
+                ArrayList<Skill> skillList = smdao.getAll_Skill_Mentor(uid);
+                
+                request.setAttribute("skilllist", skillList);
+                request.setAttribute("uid", uid);
+                
+                RequestDispatcher rd = request.getRequestDispatcher("/demoMentorSkill.jsp");
+                rd.forward(request, response);
+                
+                
             }
         }
     }

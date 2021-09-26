@@ -8,6 +8,7 @@ package dao.iplm;
 import context.MyDAO;
 import entity.CV;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
  * @author Duong
  */
 public class CVDAO extends MyDAO implements dao.CVDAO {
-
+    
     @Override
     public CV getMentorCV(int uid) {
 
@@ -81,5 +82,35 @@ public class CVDAO extends MyDAO implements dao.CVDAO {
         }
         
         return status;
+    }
+
+    @Override
+    public ArrayList<CV> getAllMentorCV() {
+        ArrayList<CV> cvList = new ArrayList<>();
+        
+        CV cv = new CV();
+        
+        xSql = "select * from [CV] ";
+
+        try {
+            ps = con.prepareStatement(xSql);
+            rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                cv.setuId(rs.getInt("uId"));
+                cv.setProfession(rs.getString("profession"));
+                cv.setProfessionIntro(rs.getString("professionIntro"));
+                cv.setServiceDescript(rs.getString("serviceDescript"));
+                cv.setAchivement(rs.getString("achievement"));
+                
+                cvList.add(cv);
+                cv = new CV();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return cvList;
     }
 }

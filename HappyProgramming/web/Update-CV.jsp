@@ -71,7 +71,7 @@
             <div class="u-clearfix u-sheet u-sheet-1">
                 <h4 class="u-text u-text-default u-text-1"><%=title %></h4>
                 <div class="u-form u-form-1">
-                    <form id="my_form"  action="CVController?service=submitFormUpdate" method="POST" class="u-clearfix u-form-spacing-9 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
+                    <form id="my_form"  action="CVControllerMap?service=submitFormUpdate" method="POST" class="u-clearfix u-form-spacing-9 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
                         <input type="hidden" name="uid" value="<%= mentorProfile.getuId() %>" readonly="readonly" value="<%= mentorProfile.getuId() %>"/>
                         <div class="u-form-group u-form-group-1">
                             <label for="text-891d" class="u-form-control-hidden u-label"></label>
