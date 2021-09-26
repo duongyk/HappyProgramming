@@ -45,6 +45,31 @@ public class SkillMentorDAO extends MyDAO implements dao.SkillMentorDAO{
         
         return skillList;
     }
+
+    @Override
+    public ArrayList<String> getAll_Id_Skill_Mentor(String uId) {
+        ArrayList<String> skill_Id_List = new ArrayList<>();
+    
+        try {
+          
+            xSql = "select * from SkillMentor where uId='"+uId+"'";
+            
+            ps = con.prepareStatement(xSql);
+            
+            rs = ps.executeQuery();              
+            
+            while(rs.next()) {
+
+                skill_Id_List.add(rs.getString("sId"));
+     
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return skill_Id_List;
+    }
     
     
     

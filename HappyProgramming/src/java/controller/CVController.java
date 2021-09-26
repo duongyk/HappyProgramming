@@ -6,6 +6,7 @@
 package controller;
 
 import dao.iplm.CVDAO;
+import dao.iplm.SkillDAO;
 import dao.iplm.SkillMentorDAO;
 import dao.iplm.UserDAO;
 import entity.CV;
@@ -49,14 +50,25 @@ public class CVController extends HttpServlet {
             
             CVDAO cvdao = new CVDAO();
             UserDAO userdao = new UserDAO();
-                
-            //dfg
+            SkillMentorDAO smdao = new SkillMentorDAO();
+            
             if(service.equals("updateCV")) {
                 int uid = Integer.parseInt(request.getParameter("uid"));
                 
                 CV mentorCV = cvdao.getMentorCV(uid);
+                
                 User mentorProfile = userdao.getUserById(uid);
                 
+                // get all skill id from mentor
+                ArrayList<String> mentorSkill = smdao.getAll_Id_Skill_Mentor(request.getParameter("uid"));
+                
+                //get all available skill
+                SkillDAO skilldao = new SkillDAO();
+                
+                ArrayList<Skill> allSkill = skilldao.getAllSkill();
+                
+                request.setAttribute("allskill", allSkill);
+                request.setAttribute("mentorskill", mentorSkill);
                 request.setAttribute("mentorprofile", mentorProfile);
                 request.setAttribute("mentorcv", mentorCV);
                 request.setAttribute("title","UPDATE CV");
@@ -113,9 +125,7 @@ public class CVController extends HttpServlet {
             if(service.equals("viewCVSkill")) {
                 
                 String uid = request.getParameter("uid");
-                
-                SkillMentorDAO smdao = new SkillMentorDAO();
-                
+                                
                 ArrayList<Skill> skillList = smdao.getAll_Skill_Mentor(uid);
                 
                 request.setAttribute("skilllist", skillList);

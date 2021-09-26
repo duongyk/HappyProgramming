@@ -4,6 +4,8 @@
     Author     : PC
 --%>
 
+<%@page import="entity.Skill"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="entity.CV"%>
 <%@page import="entity.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -33,7 +35,11 @@
         String title = request.getAttribute("title").toString();
         
         User mentorProfile = (User)request.getAttribute("mentorprofile");
-        CV mentorCV = (CV) request.getAttribute("mentorcv");
+        CV mentorCV = (CV) request.getAttribute("mentorcv");     
+        
+        ArrayList<Skill> allSkill = (ArrayList<Skill>) request.getAttribute("allskill");
+        
+        ArrayList<String> mentor_skill_Id = (ArrayList<String>) request.getAttribute("mentorskill");
     %>    
     <body class="u-body"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-6b6d"><a href="Home.html" data-page-id="745383" class="u-image u-logo u-image-1" data-image-width="313" data-image-height="95" title="D">
                 <img src="images/Logo.png" class="u-logo-image u-logo-image-1">
@@ -119,14 +125,33 @@
                             <label for="textarea-3873" class="u-form-control-hidden u-label"></label>
                             <textarea rows="4" cols="50" id="textarea-3873" name="achievement" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="" placeholder="Achievement"><%= mentorCV.getAchivement()%></textarea>
                         </div>
-                        <div class="u-form-checkbox u-form-group u-form-partition-factor-2 u-form-group-11">
-                            <input type="checkbox" id="checkbox-2a81" name="checkbox-1" value="On">
-                            <label for="checkbox-2a81" class="u-label">Java</label>
+                        <div class="u-form-group u-form-textarea u-form-group-11">
+                            <p class="u-text u-text-default u-text-2">Skills:&nbsp;</p>
                         </div>
-                        <div class="u-form-checkbox u-form-group u-form-partition-factor-2 u-form-group-12">
-                            <input type="checkbox" id="checkbox-d2f0" name="checkbox" value="On">
-                            <label for="checkbox-d2f0" class="u-label">C++</label>
+                        
+                        <%
+                            int count = 12;
+                            for(Skill skill: allSkill) {
+                        %>
+                        <div class="u-form-checkbox u-form-group u-form-partition-factor-2 u-form-group-<%=count %>">
+                            <%
+                                if (mentor_skill_Id.contains(""+skill.getsId())) {
+                            %>
+                            <input type="checkbox" name="skill[]" value="<%=skill.getsId() %>" checked>
+                            <%
+                                } else {
+                            %>
+                            <input type="checkbox" name="skill[]" value="<%=skill.getsId() %>">
+                            <%
+                                }
+                            %>
+                            <label  class="u-label"><%=skill.getsName() %></label>
                         </div>
+                        <%
+                            count++;
+                            }
+                        %>
+                        
                         <div class="u-align-center u-form-group u-form-submit">
                             <a href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Update CV</a>
                         </div>
@@ -135,7 +160,7 @@
                 </div>
                 <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/79506d11e688f731ccd8668ea9a270a8f1c3bbe48deaaa39778eb19163c1b45a18be6e4c3e8f265299f9a3284a2e8cc04605fdfc7290b9d7c20251_1280.png" alt="" data-image-width="1280" data-image-height="1280">
                 <a href="https://nicepage.com/joomla-templates" class="u-border-2 u-border-black u-btn u-button-style u-hover-custom-color-3 u-none u-text-black u-text-hover-white u-btn-2">Change avatar</a>
-                <p class="u-text u-text-default u-text-2">Skills:&nbsp;</p>
+                
             </div>
         </section>
 
