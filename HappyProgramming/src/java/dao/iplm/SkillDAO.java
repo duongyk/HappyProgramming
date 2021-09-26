@@ -88,6 +88,26 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
         
         return skill;
     }
+      public void insert(Skill x) {
+        xSql = "insert into [Skill] values (?,?)";
+        try {
+            ps = con.prepareStatement(xSql);
+            ps.setString(1, x.getsName());
+            ps.setString(2, x.getsDetail());
+            ps.executeUpdate();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean findDupSkill(String sName) {
+        ArrayList<Skill> sList = getAllSkill();
+        for (Skill s: sList){
+            if (sName.equalsIgnoreCase(s.getsName())) return true;
+        }
+        return false;
+    }
     
 //    public static void main(String[] args) {
 //        SkillDAO u = new SkillDAO();

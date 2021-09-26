@@ -77,7 +77,7 @@ public class RequestController extends HttpServlet {
                     
                     String arr[] = request.getParameterValues("sId");
                     for (String str : arr) {
-                        requestSkillDAO.skillRequest(Integer.parseInt(str));S
+                        requestSkillDAO.skillRequest(Integer.parseInt(str));
                     }
                 }
                 
