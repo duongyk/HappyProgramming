@@ -120,7 +120,7 @@ The long run has been made possible by its features of platform-independence, sc
 
 Java is popularity is mainly due to its platform-independence feature which makes it run on different types of computer, either its Macintosh or Windows or Unix or Linux or even Mainframe/mobile phones as long as it has JVM installed in it.
 
-Java code that has been written 15 years back can be made to run even on the latest JVM. One more notable feature is that it is fundamentally object-oriented and this makes Java be robust as Java objects contain no references to external data.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vexels.com%2Fpng-svg%2Fpreview%2F166401%2Fjava-programming-language-icon&psig=AOvVaw0vIBxJ29Hn5L4mM9PAXq3I&ust=1632750734628000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOjW9M7knPMCFQAAAAAdAAAAABAN');
+Java code that has been written 15 years back can be made to run even on the latest JVM. One more notable feature is that it is fundamentally object-oriented and this makes Java be robust as Java objects contain no references to external data.', 'images/java.jpg');
 
 --2 C
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('C' ,'C language is the oldest and most popular programming language. C is a general-purpose, imperative, computer programming language that supports structured programming. It was developed by Dennis Ritchie between 1969 and 1973.
@@ -143,7 +143,7 @@ Its main components include direct mapping of hardware features and zero overhea
 --4 C#
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('C#' ,'C# is a general-purpose, multi-paradigm programming language. C# encompasses static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented programming disciplines.
 
-C# was designed by Anders Hejlsberg from Microsoft in 2000 and was later approved as an international standard by Ecma (ECMA-334) in 2002 and ISO (ISO/IEC 23270) in 2003. Microsoft introduced C# along with .NET Framework and Visual Studio, both of which were closed-source.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcdnlogo.com%2Flogo%2Fc_760.html&psig=AOvVaw15D2XtJNOq0Fkf-n1Kb1gd&ust=1632750219034000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiInNninPMCFQAAAAAdAAAAABAV');
+C# was designed by Anders Hejlsberg from Microsoft in 2000 and was later approved as an international standard by Ecma (ECMA-334) in 2002 and ISO (ISO/IEC 23270) in 2003. Microsoft introduced C# along with .NET Framework and Visual Studio, both of which were closed-source.', 'images/csharp.jpg');
 
 --5 Python
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('Python' ,'Python is an interpreted high-level programming language for general programming purposes. It was released in 1991.
@@ -156,12 +156,12 @@ Python can be embedded in many software products, used in several Artificial Int
 
 Large organizations that use python include Wikipedia, Google, Yahoo etc. Libre office includes python and intends to replace Java with python. Go, Kotlin, Swift etc, have derived some of their features from python.
 
-With the growing trend of Hadoop ecosystem that is dependent on Python, Java, and Scala, Python provides an efficient competition to Java (as the world of analytics does not have many Java programmers)', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3APython-logo-notext.svg&psig=AOvVaw1gkrRFqDZhmJKDJgvhQ1-k&ust=1632750328282000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCODLk43jnPMCFQAAAAAdAAAAABAD');
+With the growing trend of Hadoop ecosystem that is dependent on Python, Java, and Scala, Python provides an efficient competition to Java (as the world of analytics does not have many Java programmers)', 'images/python.jpg');
 
 --6 Ruby
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('Ruby' ,'Ruby is an interpreted, high-level, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro "Matz" Matsumoto in Japan.
 
-Ruby is dynamically typed and uses garbage collection and just-in-time compilation. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. According to the creator, Ruby was influenced by Perl, Smalltalk, Eiffel, Ada, BASIC, and Lisp.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ARuby_logo.svg&psig=AOvVaw2G9_rOFqB38QV-j_zw4QTm&ust=1632750364367000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKj5xp7jnPMCFQAAAAAdAAAAABAD');
+Ruby is dynamically typed and uses garbage collection and just-in-time compilation. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. According to the creator, Ruby was influenced by Perl, Smalltalk, Eiffel, Ada, BASIC, and Lisp.', 'images/ruby.jpg');
 
 --7 PHP
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('PHP' ,'PHP is a general-purpose scripting language geared towards web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1994. The PHP reference implementation is now produced by The PHP Group. PHP originally stood for Personal Home Page, but it now stands for the recursive initialism PHP: Hypertext Preprocessor.
@@ -170,16 +170,16 @@ PHP code is usually processed on a web server by a PHP interpreter implemented a
 
 The standard PHP interpreter, powered by the Zend Engine, is free software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on a variety of operating systems and platforms.
 
-The PHP language evolved without a written formal specification or standard until 2014, with the original implementation acting as the de facto standard which other implementations aimed to follow. Since 2014, work has gone on to create a formal PHP specification.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fvi.wikipedia.org%2Fwiki%2FT%25E1%25BA%25ADp_tin%3APHP-logo.svg&psig=AOvVaw0ydux7hcMLiGAw47kzB6wW&ust=1632750405952000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKCfm7LjnPMCFQAAAAAdAAAAABAD');
+The PHP language evolved without a written formal specification or standard until 2014, with the original implementation acting as the de facto standard which other implementations aimed to follow. Since 2014, work has gone on to create a formal PHP specification.', 'images/php.jpg');
 
 --8 HTML
-INSERT INTO [Skill](sName, sDetail) VALUES ('HTML' ,'The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
+INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('HTML' ,'The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
 
 Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
 
 HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. Tags such as <img /> and <input /> directly introduce content into the page. Other tags such as <p> surround and provide information about document text and may include other tags as sub-elements. Browsers do not display the HTML tags, but use them to interpret the content of the page.
 
-HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages. Inclusion of CSS defines the look and layout of content. The World Wide Web Consortium (W3C), former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AHTML5_logo_and_wordmark.svg&psig=AOvVaw36y_sEXb2EXvgJx6jpQwiT&ust=1632750433970000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKjfv7_jnPMCFQAAAAAdAAAAABAD');
+HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages. Inclusion of CSS defines the look and layout of content. The World Wide Web Consortium (W3C), former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997.', 'images/html.jpg');
 
 --9 JavaScript
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('JavaScript' ,'JavaScript is a dynamic, weakly typed, Prototype-based, high-level, interpreted programming language. Its take the position of one of the core technologies of the world wide web. It enables the creation of interactive webpages.
@@ -192,12 +192,12 @@ The supporting technologies or languages that are related to JavaScript are JSON
 
 Standardization of web Assembly by W3C made programming Languages such as C, C++, Java as well as JS to author client-side code for the world wide web. However, JavaScript has now risen to biblical levels and experts say that its time to go down…and yes….partially correct too.
 
-As the preferred language for client-side development varies along with the web assembly back ends, JavaScript is at times confusing to use owing to the availability of several web options.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AJavascript-shield.svg&psig=AOvVaw1tbRxgKQJCrcr905AxaWPn&ust=1632750461368000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKjxj83jnPMCFQAAAAAdAAAAABAJ');
+As the preferred language for client-side development varies along with the web assembly back ends, JavaScript is at times confusing to use owing to the availability of several web options.', 'images/js.jpg');
 
 --10 Swift
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('Swift' ,'Swift is a general purpose, multi-paradigm, compiled programming that was developed by Apple Inc. for iOS, MacOS and for working with Cocoa frameworks. It uses the Objective C runtime library which allows C, C++ to run within one program.
 
-Swift offers core concepts like dynamic dispatch, late binding, extensible programming, and address errors like null pointer de-referencing, supporting the protocol, extensibility, struts, classes etc. Swift won the first place for being the most Loved Programming language in 2015-2016.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ASwift_logo.svg&psig=AOvVaw3Nbo6JEDMrv_R2c66CMZ7M&ust=1632750542835000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOCBxPTjnPMCFQAAAAAdAAAAABAP');
+Swift offers core concepts like dynamic dispatch, late binding, extensible programming, and address errors like null pointer de-referencing, supporting the protocol, extensibility, struts, classes etc. Swift won the first place for being the most Loved Programming language in 2015-2016.', 'images/swift.jpg');
 
 --11 SQL
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('SQL' ,'SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system (RDBMS), or for stream processing in a relational data stream management system (RDSMS). It is particularly useful in handling structured data, i.e. data incorporating relations among entities and variables.
@@ -208,7 +208,7 @@ Originally based upon relational algebra and tuple relational calculus, SQL cons
 
 SQL was one of the first commercial languages to use Edgar F. Codd’s relational model. The model was described in his influential 1970 paper, "A Relational Model of Data for Large Shared Data Banks". Despite not entirely adhering to the relational model as described by Codd, it became the most widely used database language.
 
-SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987. Since then, the standard has been revised to include a larger set of features. Despite the existence of standards, most SQL code requires at least some changes before being ported to different database systems.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.svgrepo.com%2Fsvg%2F7344%2Fsql-file-format-symbol&psig=AOvVaw0USF05LrnbtRMuCVtSkLVq&ust=1632750667473000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiHta_knPMCFQAAAAAdAAAAABAZ');
+SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987. Since then, the standard has been revised to include a larger set of features. Despite the existence of standards, most SQL code requires at least some changes before being ported to different database systems.', 'images/sql.jpg');
 
 --12 CSS
 INSERT INTO [Skill](sName, sDetail, sImage) VALUES ('CSS' ,'Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
@@ -221,7 +221,7 @@ The name cascading comes from the specified priority scheme to determine which s
 
 The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.
 
-In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ACSS.3.svg&psig=AOvVaw3dJI7i9HFiDeqy4-wH9mse&ust=1632750700187000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPC8kL_knPMCFQAAAAAdAAAAABAD');
+In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.', 'images/css.jpg');
 
 
 
