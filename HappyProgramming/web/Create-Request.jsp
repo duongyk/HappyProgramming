@@ -8,7 +8,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    ArrayList<User> uList = (ArrayList<User>) request.getAttribute("uList");
+   // ArrayList<User> uList = (ArrayList<User>) request.getAttribute("uList");
 %>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="vi">
@@ -99,11 +99,11 @@
             <div class="u-form-group u-form-select u-form-group-4">
               <label for="select-0895" class="u-label">Mentor</label>
               <div class="u-form-select-wrapper">
-                <% for (User mentor : uList) { %>
+                
                 <select id="select-0895" name="mentor" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
-                    <option value=" <%= mentor.getuId() %> "> <%= mentor.getFullname() %> </option>
+                    <option value="  ">  </option>
                 </select>
-                <% } %>
+                
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
             </div>

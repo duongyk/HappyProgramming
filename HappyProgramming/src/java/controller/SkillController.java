@@ -47,19 +47,23 @@ public class SkillController extends HttpServlet {
             if (service.equalsIgnoreCase("a")) {
                 sendDispatcher(request, response, "login.jsp");
             }
-
+             /* view list of all skill */
             if (service.equalsIgnoreCase("allSkill")) {
                 
                 ArrayList<Skill> sList = skillDAO.getAllSkill();
                 request.setAttribute("sList", sList);
                 sendDispatcher(request, response, "All-skills.jsp");
             }
-
+            
+            
+            /* search for skill by name */
             if (service.equalsIgnoreCase("searchSkill")) {
                 ArrayList<Skill> sList = skillDAO.getAllSkill();
                 request.setAttribute("sList", sList);
-                sendDispatcher(request, response, "skill.jsp");
+                sendDispatcher(request, response, "All-skills.jsp");
             }
+            
+            
             if (service.equalsIgnoreCase("createSkill")) {
                 String sName = request.getParameter("sName");
                 String sDetail = request.getParameter("sDetail");

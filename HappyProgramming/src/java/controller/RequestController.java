@@ -59,6 +59,8 @@ public class RequestController extends HttpServlet {
                 sendDispatcher(request, response, "newjsp.jsp");
             }
             
+            
+            /* create a new request */
             if (service.equalsIgnoreCase("createRequest")) {
                 User x = (User) request.getSession().getAttribute("currUser");
                 if(x== null) {
@@ -83,7 +85,7 @@ public class RequestController extends HttpServlet {
                         requestSkillDAO.skillRequest(Integer.parseInt(str));
                     }
                     
-//                    sendDispatcher(request, response, "Create-Request.jsp");
+                    sendDispatcher(request, response, "Create-Request.jsp");
                 }
                 
             }
