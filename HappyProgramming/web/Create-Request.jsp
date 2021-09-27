@@ -1,14 +1,26 @@
+<%-- 
+    Document   : Create-Request
+    Created on : Sep 27, 2021, 10:22:27 AM
+    Author     : Tung
+--%>
+
+<%@page import="entity.User"%>
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    ArrayList<User> uList = (ArrayList<User>) request.getAttribute("uList");
+%>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="vi">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="It's That Design Feeling">
+    <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Home</title>
+    <title>Create request</title>
     <link rel="stylesheet" href="css/nicepage.css" media="screen">
-<link rel="stylesheet" href="css/Home.css" media="screen">
+<link rel="stylesheet" href="css/Create-Request.css" media="screen">
     <script class="u-script" type="text/javascript" src="js/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.25.0, nicepage.com">
@@ -23,7 +35,7 @@
 		"logo": "images/Logo.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Home">
+    <meta property="og:title" content="Create request">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
@@ -39,7 +51,7 @@
           </a>
         </div>
         <div class="u-custom-menu u-nav-container">
-          <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="SkillControllerMap?service=allSkill" style="padding: 10px 16px;">All skills</a>
+          <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="All-skills.html" style="padding: 10px 16px;">All skills</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="#" style="padding: 10px 16px;">All mentors</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-up.html" style="padding: 10px 16px;">Sign up</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-in.html" style="padding: 10px 16px;">Sign in</a>
@@ -49,7 +61,7 @@
           <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
             <div class="u-sidenav-overflow">
               <div class="u-menu-close"></div>
-              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="SkillControllerMap?service=allSkill" style="padding: 10px 16px;">All skills</a>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="All-skills.html" style="padding: 10px 16px;">All skills</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="padding: 10px 16px;">All mentors</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-up.html" style="padding: 10px 16px;">Sign up</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-in.html" style="padding: 10px 16px;">Sign in</a>
@@ -67,9 +79,43 @@
         </button>
         <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
       </form></header>
-    <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-cd32">
+    <section class="u-clearfix u-grey-10 u-section-1" id="sec-84c8">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <img class="u-image u-image-1" src="images/Homepagechalogin.png" data-image-width="1812" data-image-height="917">
+        <h4 class="u-text u-text-default u-text-font u-text-1">Create Request</h4>
+        <div class="u-form u-form-1">
+          <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-26 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 50px;" redirect="true">
+            <div class="u-form-group u-form-group-1">
+              <label for="text-b048" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="Title" id="text-b048" name="#" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+            </div>
+            <div class="u-form-group u-form-group-2">
+              <label for="text-3911" class="u-form-control-hidden u-label"></label>
+              <input type="text" id="text-3911" name="#-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" placeholder="Content" required="required">
+            </div>
+            <div class="u-form-date u-form-group">
+              <label for="text-0855" class="u-label">Deadline date</label>
+              <input id="text-0855" name="Date" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="date">
+            </div>
+            <div class="u-form-group u-form-select u-form-group-4">
+              <label for="select-0895" class="u-label">Mentor</label>
+              <div class="u-form-select-wrapper">
+                <% for (User mentor : uList) { %>
+                <select id="select-0895" name="mentor" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                    <option value=" <%= mentor.getuId() %> "> <%= mentor.getFullname() %> </option>
+                </select>
+                <% } %>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div>
+            <div class="u-align-center u-form-group u-form-submit">
+              <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Create CV</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+            <input type="hidden" value="" name="recaptchaResponse">
+          </form>
+        </div>
       </div>
     </section>
     
@@ -81,14 +127,14 @@
         </div>
       </div><img class="u-image u-image-default u-image-2" src="images/contact.png" alt="" data-image-width="177" data-image-height="361"></footer>
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
+      <a class="u-link" href="https://nicepage.com/html5-template" target="_blank">
+        <span>HTML5 Templates</span>
       </a>
       <p class="u-text">
         <span>created with</span>
       </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
+      <a class="u-link" href="https://nicepage.com/static-site-generator" target="_blank">
+        <span>Static Website Generator</span>
       </a>. 
     </section>
   </body>

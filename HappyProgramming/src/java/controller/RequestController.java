@@ -65,6 +65,9 @@ public class RequestController extends HttpServlet {
                     out.print("Access denied!");
                 }
                 else{
+                    ArrayList<User> uList = userDao.getUserByRole(1);
+                    request.setAttribute("uList", uList);
+                    
                     RequestDAO rDAO = new RequestDAO();
                     
                     String title = request.getParameter("title");
@@ -79,6 +82,8 @@ public class RequestController extends HttpServlet {
                     for (String str : arr) {
                         requestSkillDAO.skillRequest(Integer.parseInt(str));
                     }
+                    
+//                    sendDispatcher(request, response, "Create-Request.jsp");
                 }
                 
             }

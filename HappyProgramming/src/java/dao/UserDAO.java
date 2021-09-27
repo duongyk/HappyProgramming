@@ -15,4 +15,5 @@ import java.util.ArrayList;
 public interface UserDAO {
     public ArrayList<User> getUserList();
     public User getUser(String xName, String xPass);
+    public ArrayList<User> getUserByRole(int uRole);
 }
