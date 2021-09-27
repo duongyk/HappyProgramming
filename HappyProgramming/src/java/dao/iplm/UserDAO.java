@@ -81,6 +81,8 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         }
         return null;
     }
+    
+    
     public User checkAccount(String xName) { // check xem tài khoản này đã tồn tại trong db chưa
 
         xSql = "select * from [User] where username=? ";
@@ -101,6 +103,8 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         }
         return null;
     }
+    
+    
     public void signup( String uName ,String uPass, String uMail, String fName, String phone,String uAddress,String sex,String DOB,int  role  ){
         String xSql=" insert into [User]  value(?,?,?,?,?,?,?,?,?)" ;
         SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
