@@ -152,40 +152,9 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         return status;
     }
     
-    @Override
-    public ArrayList<User> getUserByRole(int uRole) {
-        ArrayList<User> list = new ArrayList<>();
-        xSql = "select * from [User] where [uRole] = '"+ uRole +"'";
-        int id;
-        String name, mail, phone, gender, avatar;
-        Date dob;
-        User u;
-        try {
-            ps = con.prepareCall(xSql);
-            rs = ps.executeQuery();
-            while(rs.next()) {
-                id = rs.getInt("uId");
-                name = rs.getString("username");
-                mail = rs.getString("uMail");
-                phone  = rs.getString("uPhone");
-                dob = rs.getDate("DOB");
-                gender = rs.getString("gender");
-                avatar = rs.getString("uAvatar");
-                u = new User(id, name, mail, phone, dob, gender, avatar);
-                list.add(u);
-            }
-            ps.close();
-            rs.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
-    
 
     public static void main(String[] args) {
         UserDAO u = new UserDAO();
-        System.out.println(u.getUserList());
 //        User x= u.getUser("admin", "administrator");
 //        if (x!=null) System.out.println(x.getuRole());
             

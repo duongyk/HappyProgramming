@@ -20,7 +20,7 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
         ArrayList<Skill> list = new ArrayList<>();
         xSql = "select * from [Skill]";
         int id;
-        String name, detail, image;
+        String name, detail;
         Skill s;
         try {
             ps = con.prepareStatement(xSql);
@@ -29,8 +29,7 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
                 id = rs.getInt("sId");
                 name = rs.getString("sName");
                 detail = rs.getString("sDetail");
-                image = rs.getString("sImage");
-                s = new Skill(id, name, detail, image);
+                s = new Skill(id, name, detail);
                 list.add(s);
             }
             rs.close();

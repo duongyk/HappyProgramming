@@ -32,17 +32,6 @@ public class User {
         this.password = password;
     }
 
-    public User(int uId, String fullname, String uMail, String uPhone, Date dob, String gender, String uAvatar) {
-        this.uId = uId;
-        this.fullname = fullname;
-        this.uMail = uMail;
-        this.uPhone = uPhone;
-        this.dob = dob;
-        this.gender = gender;
-        this.uAvatar = uAvatar;
-    }
-    
-
     public User(int uId, String username, String password, String fullname, String uMail, String uPhone, Date dob, String gender, String uAvatar,int uRole) {
         this.uId = uId;
         this.username = username;
