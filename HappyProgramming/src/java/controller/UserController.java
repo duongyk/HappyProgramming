@@ -88,9 +88,9 @@ public class UserController extends HttpServlet {
                 String repass = request.getParameter("confirm");
                 String fname = request.getParameter("fullname");
                 String phone = request.getParameter("phone");
-                String address = request.getParameter("address");
+                String address = request.getParameter("text-1");
                 String sex = request.getParameter("sex");
-                String DOB = request.getParameter("dob");
+                String DOB = request.getParameter("text-4");
                 Integer role = Integer.parseInt(request.getParameter("role"));
                 if (!password.equals(repass)) {
                     // js: ko trung pass
@@ -104,7 +104,7 @@ public class UserController extends HttpServlet {
                         response.sendRedirect("Sign-in.jsp");
                     } else {
                         response.sendRedirect("Sign-in.jsp");
-                       // response.sendRedirect("CVControllerMap?service=createCV&uId="+a.getuId());
+                        //response.sendRedirect("CVControllerMap?service=createCV&uId="+a.getuId());
                     }
                     // khi dang ki hoan tat se cha nguoi dung ve page login
                 } else { //neu co roi se day ve trang sighn up
@@ -117,8 +117,6 @@ public class UserController extends HttpServlet {
             if (service.equalsIgnoreCase("logout")) {
 
             }
-            
-            
 
             if (service.equalsIgnoreCase("getRating")) {
                 int mId = Integer.parseInt(request.getParameter("uId"));
