@@ -65,36 +65,38 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
         }
         return list;
     }
-   
+
     //viet thang
     @Override
     public Skill getSkillById(String sId) {
         Skill skill = new Skill();
-        
-        xSql = "select * from [Skill] where sId='"+sId+"'";
-        
+
+        xSql = "select * from [Skill] where sId='" + sId + "'";
+
         try {
             ps = con.prepareStatement(xSql);
             rs = ps.executeQuery();
-            
+
             if (rs.next()) {
                 skill.setsId(rs.getInt("sId"));
                 skill.setsName(rs.getString("sName"));
                 skill.setsDetail(rs.getString("sDetail"));
-            } 
-                    
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         return skill;
     }
-      public void insert(Skill x) {
-        xSql = "insert into [Skill] values (?,?)";
+
+    public void insert(Skill x) {
+        xSql = "insert into [Skill] values (?,?,?)";
         try {
             ps = con.prepareStatement(xSql);
             ps.setString(1, x.getsName());
             ps.setString(2, x.getsDetail());
+            ps.setString(3, x.getsImage());
             ps.executeUpdate();
             ps.close();
         } catch (Exception e) {
@@ -104,12 +106,14 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
 
     public boolean findDupSkill(String sName) {
         ArrayList<Skill> sList = getAllSkill();
-        for (Skill s: sList){
-            if (sName.equalsIgnoreCase(s.getsName())) return true;
+        for (Skill s : sList) {
+            if (sName.equalsIgnoreCase(s.getsName())) {
+                return true;
+            }
         }
         return false;
     }
-    
+
 //    public static void main(String[] args) {
 //        SkillDAO u = new SkillDAO();
 //        ArrayList<Skill> x= u.getAllSkill();

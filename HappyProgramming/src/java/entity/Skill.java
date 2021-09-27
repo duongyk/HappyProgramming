@@ -30,9 +30,10 @@ public class Skill {
         this.sImage = sImage;
     }
 
-    public Skill(String sName, String sDetail) {
+    public Skill(String sName, String sDetail, String sImage) {
         this.sName = sName;
         this.sDetail = sDetail;
+         this.sImage = sImage;
     }
     
     public Skill(int sId, String sName, String sDetail) {

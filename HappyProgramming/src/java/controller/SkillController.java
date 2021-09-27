@@ -67,12 +67,13 @@ public class SkillController extends HttpServlet {
             if (service.equalsIgnoreCase("createSkill")) {
                 String sName = request.getParameter("sName");
                 String sDetail = request.getParameter("sDetail");
+                String sImage = request.getParameter("sImage");
                 if (skillDAO.findDupSkill(sName)) {
                     String mess = "Skill existed!";
                     request.setAttribute("mess", mess);
                     sendDispatcher(request, response, "createSkill.jsp");
                 } else {
-                    skillDAO.insert(new Skill(sName, sDetail));
+                    skillDAO.insert(new Skill(sName, sDetail, sImage));
                     sendDispatcher(request, response, "SkillControllerMap?service=allSkill");
                 }
             }
