@@ -20,7 +20,7 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
         ArrayList<Skill> list = new ArrayList<>();
         xSql = "select * from [Skill]";
         int id;
-        String name, detail, image;
+        String name, detail;
         Skill s;
         try {
             ps = con.prepareStatement(xSql);
@@ -29,8 +29,7 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
                 id = rs.getInt("sId");
                 name = rs.getString("sName");
                 detail = rs.getString("sDetail");
-                image = rs.getString("sImage");
-                s = new Skill(id, name, detail, image);
+                s = new Skill(id, name, detail);
                 list.add(s);
             }
             rs.close();
@@ -46,7 +45,7 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
         ArrayList<Skill> list = new ArrayList<>();
         xSql = "select * from [Skill] where sName like '% " + sName + "%'";
         int id;
-        String name, detail, image;
+        String name, detail;
         Skill s;
         try {
             ps = con.prepareStatement(xSql);
@@ -55,8 +54,7 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
                 id = rs.getInt("sId");
                 name = rs.getString("sName");
                 detail = rs.getString("sDetail");
-                image = rs.getString("sImage");
-                s = new Skill(id, name, detail, image);
+                s = new Skill(id, name, detail);
                 list.add(s);
             }
             rs.close();
@@ -111,8 +109,11 @@ public class SkillDAO extends MyDAO implements dao.SkillDAO {
         return false;
     }
     
-    public static void main(String[] args) {
-        SkillDAO u = new SkillDAO();
-        System.out.println(u.getAllSkill());
-    }
+//    public static void main(String[] args) {
+//        SkillDAO u = new SkillDAO();
+//        ArrayList<Skill> x= u.getAllSkill();
+//        for (Skill s: x){
+//            System.out.println(s.getsName()+" "+s.getsId());
+//        }
+//    }
 }

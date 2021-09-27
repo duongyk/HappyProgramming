@@ -14,7 +14,6 @@ public class Skill {
     private int sId;
     private String sName;
     private String sDetail;
-    private String sImage;
 
     public Skill() {
     }
@@ -30,11 +29,10 @@ public class Skill {
         this.sDetail = sDetail;
     }
     
-    public Skill(int sId, String sName, String sDetail, String sImage) {
+    public Skill(int sId, String sName, String sDetail) {
         this.sId = sId;
         this.sName = sName;
         this.sDetail = sDetail;
-        this.sImage = sImage;
     }
 
     public int getsId() {
@@ -61,13 +59,4 @@ public class Skill {
         this.sDetail = sDetail;
     }
 
-    public String getsImage() {
-        return sImage;
-    }
-
-    public void setsImage(String sImage) {
-        this.sImage = sImage;
-    }
-    
-    
 }

@@ -35,11 +35,11 @@ public class SkillController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     SkillDAO skillDAO = new SkillDAO();
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) { 
+        try (PrintWriter out = response.getWriter()) {
             String service = request.getParameter("service");
             if (service == null) {
                 service = "a";
@@ -50,12 +50,14 @@ public class SkillController extends HttpServlet {
 
             if (service.equalsIgnoreCase("allSkill")) {
                 ArrayList<Skill> sList = skillDAO.getAllSkill();
-            request.setAttribute("sList", sList);
-                sendDispatcher(request, response, "All-skills.jsp");
+
+                request.setAttribute("sList", sList);
+                sendDispatcher(request, response, "skill.jsp");
             }
 
             if (service.equalsIgnoreCase("searchSkill")) {
                 ArrayList<Skill> sList = skillDAO.getAllSkill();
+
                 request.setAttribute("sList", sList);
                 sendDispatcher(request, response, "skill.jsp");
             }
