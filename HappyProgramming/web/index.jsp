@@ -54,6 +54,10 @@
                         <%if (x != null) {%>
                         <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
+                                href="RequestControllerMap?service=createRequest" style="padding: 10px 36px;">create request</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
                                 href="UserControllerMap?service=listRequest" style="padding: 10px 36px;">Request</a>
                         </li> 
                         <li class="u-nav-item"><a

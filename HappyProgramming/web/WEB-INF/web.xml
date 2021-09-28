@@ -9,16 +9,16 @@
         <servlet-class>controller.SkillController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RequestController</servlet-name>
-        <servlet-class>controller.RequestController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>AdminController</servlet-name>
         <servlet-class>controller.AdminController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CVController</servlet-name>
         <servlet-class>controller.CVController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RequestController</servlet-name>
+        <servlet-class>controller.RequestController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserController</servlet-name>
@@ -29,16 +29,16 @@
         <url-pattern>/SkillControllerMap</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RequestController</servlet-name>
-        <url-pattern>/RequestControllerMap</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>AdminController</servlet-name>
         <url-pattern>/AdminControllerMap</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CVController</servlet-name>
         <url-pattern>/CVControllerMap</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RequestController</servlet-name>
+        <url-pattern>/RequestControllerMap</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

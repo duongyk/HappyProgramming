@@ -25,6 +25,10 @@ public class Request {
     public Request() {
     }
 
+    public Request(String title) {
+        this.title = title;
+    }
+
     public Request(String title, String content, int fromId, int toId, Date deadlineDate, String status) {
         this.title = title;
         this.content = content;

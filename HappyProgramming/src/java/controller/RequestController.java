@@ -19,14 +19,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.iplm.RequestDAO;
 import dao.iplm.RequestSkillDAO;
+import dao.iplm.SkillDAO;
 import dao.iplm.UserDAO;
-//import java.text.ParseException; // parse date
+import entity.Skill;
 import java.text.SimpleDateFormat;
 import java.sql.Date;
 
 /**
  *
- * @author Duong tuan vu
+ * @author Tung
  */
 public class RequestController extends HttpServlet {
 
@@ -39,10 +40,11 @@ public class RequestController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     UserDAO userDao = new UserDAO();
     RequestDAO requestDAO = new RequestDAO();
     RequestSkillDAO requestSkillDAO = new RequestSkillDAO();
+    SkillDAO skillDAO = new SkillDAO();
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -62,34 +64,38 @@ public class RequestController extends HttpServlet {
             
             /* create a new request */
             if (service.equalsIgnoreCase("createRequest")) {
+//                User x = (User) request.getSession().getAttribute("currUser");
+//                ArrayList<Request> rList = requestDAO.getListByMe(x);
+//                request.setAttribute("rList", rList);
+//                sendDispatcher(request, response, "createRequest.jsp");
+
+
                 User x = (User) request.getSession().getAttribute("currUser");
-                if(x== null) {
-                    out.print("Access denied!");
-                }
-                else{
-                    ArrayList<User> uList = userDao.getUserByRole(1);
-                    request.setAttribute("uList", uList);
-                    
-                    RequestDAO rDAO = new RequestDAO();
-                    
-                    String title = request.getParameter("title");
-                    String content = request.getParameter("content");
-                    int fromId = x.getuId();
-                    int toId = Integer.parseInt(request.getParameter("toId"));
-                    Date deadlineDate = Date.valueOf(request.getParameter("deadlineDate"));
-                    
-                    Request req = new Request(title, content, fromId, toId, deadlineDate);
-                    
-                    String arr[] = request.getParameterValues("sId");
-                    for (String str : arr) {
-                        requestSkillDAO.skillRequest(Integer.parseInt(str));
-                    }
-                    
-                    sendDispatcher(request, response, "Create-Request.jsp");
-                }
+//                
+//                ArrayList<User> mentor = userDao.getUserByRole(2);
+//                request.setAttribute("mList", mentor);
+                ArrayList<Skill> sList = skillDAO.getAllSkill();
+                request.setAttribute("sList", sList);
+
+                String title = request.getParameter("title");
+                String content = request.getParameter("content");
+                int fromId = x.getuId();
                 
+//                User m = userDao.getMentorByName(request.getParameter("toId"));
+                int toId = userDao.getIdByName("toId");
+//                int toId = Integer.parseInt(request.getParameter("toId")); //bug
+//                String deadline = request.getParameter("deadlineDate");
+//                Date deadlineDate = Date.valueOf(deadline);
+                
+//                Request req = new Request(title, content, fromId, toId, deadlineDate);
+                
+//                String arr[] = request.getParameterValues("skill");
+//                for (String str : arr) { //bug
+//                    requestSkillDAO.skillRequest(Integer.parseInt(str));
+//                }
+                
+                sendDispatcher(request, response, "createRequest.jsp");
             }
-            
         }
     }
     

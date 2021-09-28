@@ -27,13 +27,19 @@ public class User {
     public User() {
     }
 
+    public User(int uId) {
+        this.uId = uId;
+    }
+    
     public User(String username, String password) {
        this.username = username;
         this.password = password;
     }
 
-    public User(int uId, String fullname, String uMail, String uPhone, Date dob, String gender, String uAvatar) {
+    public User(int uId, String username, String password, String fullname, String uMail, String uPhone, Date dob, String gender, String uAvatar) {
         this.uId = uId;
+        this.username = username;
+        this.password = password;
         this.fullname = fullname;
         this.uMail = uMail;
         this.uPhone = uPhone;
@@ -41,8 +47,8 @@ public class User {
         this.gender = gender;
         this.uAvatar = uAvatar;
     }
-    
 
+    
     public User(int uId, String username, String password, String fullname, String uMail, String uPhone, Date dob, String gender, String uAvatar,int uRole) {
         this.uId = uId;
         this.username = username;

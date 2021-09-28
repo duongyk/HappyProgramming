@@ -4,12 +4,16 @@
     Author     : Tung
 --%>
 
+<%@page import="entity.Skill"%>
 <%@page import="entity.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%
-   // ArrayList<User> uList = (ArrayList<User>) request.getAttribute("uList");
+    //ArrayList<User> mList = (ArrayList<User>) request.getAttribute("mList");
+    ArrayList<Skill> sList = (ArrayList<Skill>) request.getAttribute("sList");
 %>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="vi">
   <head>
@@ -61,7 +65,7 @@
           <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
             <div class="u-sidenav-overflow">
               <div class="u-menu-close"></div>
-              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="All-skills.html" style="padding: 10px 16px;">All skills</a>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="SkillControllerMap?service=allSkill" style="padding: 10px 16px;">All skills</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" style="padding: 10px 16px;">All mentors</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-up.html" style="padding: 10px 16px;">Sign up</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-in.html" style="padding: 10px 16px;">Sign in</a>
@@ -83,34 +87,59 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h4 class="u-text u-text-default u-text-font u-text-1">Create Request</h4>
         <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-26 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 50px;" redirect="true">
+          <form action="createRequest" method="GET" class="u-clearfix u-form-custom-backend u-form-spacing-26 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 50px;" redirect="true">
+            <%-- Title --%>
             <div class="u-form-group u-form-group-1">
               <label for="text-b048" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Title" id="text-b048" name="#" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+              <input type="text" placeholder="Title" id="text-b048" name="title" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
             </div>
+            <%-- Content --%>
             <div class="u-form-group u-form-group-2">
               <label for="text-3911" class="u-form-control-hidden u-label"></label>
-              <input type="text" id="text-3911" name="#-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" placeholder="Content" required="required">
+              <input type="text" id="text-3911" name="content" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" placeholder="Content" required="required">
             </div>
+            
             <div class="u-form-date u-form-group">
               <label for="text-0855" class="u-label">Deadline date</label>
-              <input id="text-0855" name="Date" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="date">
+              <input type="date" name="deadlineDate" id="text-0855" value="yyyy-MM-dd" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
             </div>
-            <div class="u-form-group u-form-select u-form-group-4">
-              <label for="select-0895" class="u-label">Mentor</label>
-              <div class="u-form-select-wrapper">
+            <%-- Mentor --%>
+            <div class="u-form-group u-form-group-1">
+              <label for="text-b048" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="Mentor" id="text-b048" name="toId" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+            </div>
                 
-                <select id="select-0895" name="mentor" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
-                    <option value="  ">  </option>
-                </select>
+            <div class="u-form-group u-form-select u-form-group-5">
+              <label for="select-0895" class="u-label">Skill</label>
+              <div class="u-form-select-wrapper">
+                <%--
+                <option type="checkbox" id="select-0895" name="skill" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                    <% for (Skill skill : sList) { %>
+                    <p>
+                    <input type="checbox" id="  " name="skill" value=" <%= skill.getsId() %> ">
+                    <label for=" <%= skill.getsId() %> "> <%= skill.getsName() %> </label>
+                    <p>
+                    <option value="<%= skill.getsId() %> "> <%= skill.getsName() %> </option>
+                    <% } %>
+                </option>
+                --%>
+                
+                <% for(Skill x: sList) { %>
+                <p>
+                <input type="checkbox" id="<%= x.getsId()%>" name="skill" value="<%= x.getsId()%>">
+                <label for="<%= x.getsId()%>"> <%= x.getsName()%> </label><br>
+                </p>
+                <% } %>
                 
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
-            </div>
+            </div>    
+                
             <div class="u-align-center u-form-group u-form-submit">
-              <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Create CV</a>
+              <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Create Request</a>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
+                
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
             <input type="hidden" value="" name="recaptchaResponse">

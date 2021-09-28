@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.iplm.SkillDAO;
+import entity.User;
 import java.util.ArrayList;
 
 /**
@@ -49,7 +50,7 @@ public class SkillController extends HttpServlet {
             }
              /* view list of all skill */
             if (service.equalsIgnoreCase("allSkill")) {
-                
+                User x = (User) request.getSession().getAttribute("currUser");
                 ArrayList<Skill> sList = skillDAO.getAllSkill();
                 request.setAttribute("sList", sList);
                 sendDispatcher(request, response, "All-skills.jsp");
