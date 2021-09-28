@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class SkillMentorDAO extends MyDAO implements dao.SkillMentorDAO{
 
     @Override
-    public ArrayList<Skill> getAll_Skill_Mentor(String uid) {
+    public ArrayList<Skill> getAll_Skill_Mentor(int uid) {
         ArrayList<Skill> skillList = new ArrayList<>();
         SkillDAO skilldao = new SkillDAO();
         
@@ -48,7 +48,7 @@ public class SkillMentorDAO extends MyDAO implements dao.SkillMentorDAO{
     }
 
     @Override
-    public ArrayList<String> getAll_Id_Skill_Mentor(String uId) {
+    public ArrayList<String> getAll_Id_Skill_Mentor(int uId) {
         ArrayList<String> skill_Id_List = new ArrayList<>();
     
         try {

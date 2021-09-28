@@ -13,8 +13,8 @@ import java.util.ArrayList;
  * @author Duong
  */
 public interface SkillMentorDAO {
-    public ArrayList<Skill> getAll_Skill_Mentor(String uId);
-    public ArrayList<String> getAll_Id_Skill_Mentor(String uId);
+    public ArrayList<Skill> getAll_Skill_Mentor(int uId);
+    public ArrayList<String> getAll_Id_Skill_Mentor(int uId);
     
     public int updateMentorSkill(int uid, String[] skills);
 }

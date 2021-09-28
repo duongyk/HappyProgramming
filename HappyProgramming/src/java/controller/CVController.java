@@ -25,6 +25,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -44,6 +45,7 @@ public class CVController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String service = request.getParameter("service");
@@ -51,6 +53,8 @@ public class CVController extends HttpServlet {
             CVDAO cvdao = new CVDAO();
             UserDAO userdao = new UserDAO();
             SkillMentorDAO smdao = new SkillMentorDAO();
+            
+            HttpSession session = request.getSession();
             
             if(service.equals("updateCV")) {
                 int uid = Integer.parseInt(request.getParameter("uid"));
@@ -60,7 +64,7 @@ public class CVController extends HttpServlet {
                 User mentorProfile = userdao.getUserById(uid);
                 
                 // get all skill id from mentor
-                ArrayList<String> mentorSkill = smdao.getAll_Id_Skill_Mentor(request.getParameter("uid"));
+                ArrayList<String> mentorSkill = smdao.getAll_Id_Skill_Mentor(uid);
                 
                 //get all available skill
                 SkillDAO skilldao = new SkillDAO();
@@ -69,7 +73,7 @@ public class CVController extends HttpServlet {
                 
                 request.setAttribute("allskill", allSkill);
                 request.setAttribute("mentorskill", mentorSkill);
-                request.setAttribute("mentorprofile", mentorProfile);
+                session.setAttribute("mentorprofile", mentorProfile);
                 request.setAttribute("mentorcv", mentorCV);
                 request.setAttribute("title","UPDATE CV");
                 
@@ -163,7 +167,7 @@ public class CVController extends HttpServlet {
             
             if(service.equals("viewCVSkill")) {
                 
-                String uid = request.getParameter("uid");
+                int uid = Integer.parseInt(request.getParameter("uid"));
                                 
                 ArrayList<Skill> skillList = smdao.getAll_Skill_Mentor(uid);
                 

@@ -3,15 +3,17 @@
     Created on : Sep 24, 2021, 8:04:14 AM
     Author     : PC
 --%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="entity.Skill"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="entity.CV"%>
 <%@page import="entity.User"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="vi">
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <meta name="keywords" content="">
@@ -32,64 +34,73 @@
         <meta property="og:type" content="website">
     </head>
     <%
-        String title = request.getAttribute("title").toString();
+        //String title = request.getAttribute("title").toString();
         
-        User mentorProfile = (User)request.getAttribute("mentorprofile");
-        CV mentorCV = (CV) request.getAttribute("mentorcv");     
+        //User mentorProfile = (User)request.getAttribute("mentorprofile");
+        //CV mentorCV = (CV) request.getAttribute("mentorcv");     
         
-        ArrayList<Skill> allSkill = (ArrayList<Skill>) request.getAttribute("allskill");
+        //ArrayList<Skill> allSkill = (ArrayList<Skill>) request.getAttribute("allskill");
         
-        ArrayList<String> mentor_skill_Id = (ArrayList<String>) request.getAttribute("mentorskill");
+        //ArrayList<String> mentor_skill_Id = (ArrayList<String>) request.getAttribute("mentorskill");
     %>    
-    <body class="u-body"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-6b6d"><a href="Home.html" data-page-id="745383" class="u-image u-logo u-image-1" data-image-width="313" data-image-height="95" title="D">
+    <%
+        User x = (User) request.getSession().getAttribute("mentorprofile");
+    %>
+    <body class="u-body">
+        <header class="u-clearfix u-custom-color-1 u-header ">
+            <a href="index.jsp" class="u-image u-logo u-image-1" data-image-width="313" data-image-height="95" t>
                 <img src="images/Logo.png" class="u-logo-image u-logo-image-1">
-            </a><nav class="u-align-right u-menu u-menu-dropdown u-offcanvas u-menu-1" data-position="" data-responsive-from="MD">
-                <div class="menu-collapse" style="font-size: 0.875rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
-                    <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-border-radius u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="">
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-                        </symbol>
-                        </defs></svg>
-                    </a>
+            </a>
+            <nav class="u-align-right u-menu x u-offcanvas u-menu-1" data-position="" data-responsive-from="MD">
+
+                <div class="u-nav-container">
+                    <ul class="u-custom-font u-nav u-spacing-30 u-text-font u-unstyled u-nav-1">
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
+                                href="" style="padding: 10px 36px;">All mentors</a>
+                        </li>
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
+                                href="SkillControllerMap?service=allSkill" style="padding: 10px 36px;">All skills</a>
+                        </li>
+                        <%if (x != null) {%>
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
+                                href="UserControllerMap?service=listRequest" style="padding: 10px 36px;">Request</a>
+                        </li> 
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
+                                href="UserControllerMap?service=profile" style="padding: 10px 36px;">Profile</a>
+                        </li> 
+                        <%} else {%>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-up.jsp" style="padding: 10px 16px;">Sign up</a> </li> 
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"  
+                                href="Sign-in.jsp"style="padding: 10px 36px;">Sign-in</a>
+                        </li>
+                        <%}%>
+                    </ul>
                 </div>
-                <div class="u-custom-menu u-nav-container">
-                    <ul class="u-custom-font u-nav u-spacing-30 u-text-font u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="All-mentors.html" style="padding: 10px 36px;">All mentors</a>
-                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="All-skills.html" style="padding: 10px 36px;">All skills</a>
-                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-in.html" style="padding: 10px 36px;">Sign in</a>
-                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Sign-up.html" style="padding: 10px 36px;">Sign up</a>
-                        </li></ul>
-                </div>
-                <div class="u-custom-menu u-nav-container-collapse">
-                    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                        <div class="u-inner-container-layout u-sidenav-overflow">
-                            <div class="u-menu-close"></div>
-                            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="All-mentors.html" style="padding: 10px 36px;">All mentors</a>
-                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="All-skills.html" style="padding: 10px 36px;">All skills</a>
-                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-in.html" style="padding: 10px 36px;">Sign in</a>
-                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-up.html" style="padding: 10px 36px;">Sign up</a>
-                                </li></ul>
-                        </div>
-                    </div>
-                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-                </div>
-            </nav></header>
+
+            </nav>
+        </header>
         <section class="u-clearfix u-custom-color-2 u-section-1" id="sec-ebef">
             <div class="u-clearfix u-sheet u-sheet-1">
-                <h4 class="u-text u-text-default u-text-1"><%=title %></h4>
+                <h4 class="u-text u-text-default u-text-1"><c:out value="${title}"></c:out></h4>
                 <div class="u-form u-form-1">
                     <form id="my_form"  action="CVControllerMap?service=submitFormUpdate" method="POST" class="u-clearfix u-form-spacing-9 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
-                        <input type="hidden" name="uid" value="<%= mentorProfile.getuId() %>" readonly="readonly" value="<%= mentorProfile.getuId() %>"/>
+                        <input type="hidden" name="uid" value="<c:out value="${mentorprofile.getuId()}"></c:out>" readonly="readonly" />
                         <div class="u-form-group u-form-group-1">
                             <label for="text-891d" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="User name" id="text-891d" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<%= mentorProfile.getUsername() %>" readonly="readonly">
+                            <input type="text" placeholder="User name" id="text-891d" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<c:out value="${mentorprofile.getUsername()}"></c:out>" readonly="readonly">
                         </div>
                         <div class="u-form-group u-form-group-2">
                             <label for="text-3911" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="Fullname" id="text-3911" name="fullname" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<%= mentorProfile.getFullname() %>">
+                            <input type="text" placeholder="Fullname" id="text-3911" name="fullname" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<c:out value="${mentorprofile.getFullname()}"></c:out>">
                         </div>
                         <div class="u-form-date u-form-group u-form-partition-factor-2 u-form-group-3">
                             <label for="text-13e0" class="u-label">Date of birth</label>
-                            <input type="date" id="text-13e0" name="dob" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value="<%= mentorProfile.getDob() %>">
+                            <input type="date" id="text-13e0" name="dob" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value="<c:out value="${mentorprofile.getDob()}"></c:out>">
                         </div>
                         <div class="u-form-group u-form-partition-factor-2 u-form-select u-form-group-4">
                             <label for="select-6004" class="u-label">Sex</label>
@@ -103,61 +114,72 @@
                         </div>
                         <div class="u-form-group u-form-group-5">
                             <label for="text-b9a0" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="Mail" id="text-b9a0" name="mail" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<%= mentorProfile.getuMail() %>">
+                            <input type="text" placeholder="Mail" id="text-b9a0" name="mail" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<c:out value="${mentorprofile.getuMail()}"></c:out>">
                         </div>
                         <div class="u-form-group u-form-group-6">
                             <label for="text-0855" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="Phone" id="text-0855" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<%= mentorProfile.getuPhone() %>">
+                            <input type="text" placeholder="Phone" id="text-0855" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<c:out value="${mentorprofile.getuPhone()}"></c:out>">
                         </div>
                         <div class="u-form-group u-form-group-7">
                             <label for="text-1c7c" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="Profession" id="text-1c7c" name="profession" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<%= mentorCV.getProfession() %>">
+                            <input type="text" placeholder="Profession" id="text-1c7c" name="profession" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" value="<c:out value="${mentorcv.getProfession()}"></c:out>">
                         </div>
                         <div class="u-form-group u-form-message u-form-group-8">
                             <label for="text-b048" class="u-form-control-hidden u-label"></label>
-                            <textarea placeholder="Profession introduction" id="text-b048" name="professionIntro" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" ><%= mentorCV.getProfessionIntro()%></textarea>
+                            <textarea placeholder="Profession introduction" id="text-b048" name="professionIntro" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" ><c:out value="${mentorcv.getProfessionIntro()}"></c:out></textarea>
                         </div>
                         <div class="u-form-group u-form-message u-form-group-9">
                             <label for="text-47b9" class="u-form-control-hidden u-label"></label>
-                            <textarea placeholder="Service description" id="text-47b9" name="serviceDescription" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" pattern="\+?\d{0,2}[\s\(\-]?([0-9]{3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" required="required"><%= mentorCV.getServiceDescript() %></textarea>
+                            <textarea placeholder="Service description" id="text-47b9" name="serviceDescription" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" pattern="\+?\d{0,2}[\s\(\-]?([0-9]{3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" required="required"><c:out value="${mentorcv.getServiceDescript()}"></c:out></textarea>
                         </div>
                         <div class="u-form-group u-form-textarea u-form-group-10">
                             <label for="textarea-3873" class="u-form-control-hidden u-label"></label>
-                            <textarea rows="4" cols="50" id="textarea-3873" name="achievement" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="" placeholder="Achievement"><%= mentorCV.getAchivement()%></textarea>
+                            <textarea rows="4" cols="50" id="textarea-3873" name="achievement" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="" placeholder="Achievement"><c:out value="${mentorcv.getAchivement()}"></c:out></textarea>
                         </div>
                         <div class="u-form-group u-form-textarea u-form-group-11">
                             <p class="u-text u-text-default u-text-2">Skills:&nbsp;</p>
                         </div>
                         
                         <%
-                            int count = 12;
-                            for(Skill skill: allSkill) {
+                            //int count = 12;
+                            //for(Skill skill: allSkill) {
                         %>
-                        <div class="u-form-checkbox u-form-group u-form-partition-factor-2 u-form-group-<%=count %>">
+                        <c:set var="count" value="12" scope="page" />
+                        <c:forEach items="${allskill}" var="skill">
+                        <div class="u-form-checkbox u-form-group u-form-partition-factor-2 u-form-group-<c:out value="${count}"></c:out>">
                             <%
-                                if (mentor_skill_Id.contains(""+skill.getsId())) {
+                                //String.valueOf();
+                                //if (mentor_skill_Id.contains(""+skill.getsId())) {
                             %>
-                            <input type="checkbox" name="skills" value="<%=skill.getsId() %>" checked>
+                            <c:choose>
+                                <c:when test="${mentorskill.contains(String.valueOf(skill.getsId()))}">
+                            <input type="checkbox" name="skills" value="<c:out value="${skill.getsId()}"></c:out>" checked>
                             <%
-                                } else {
+                                //} else {
                             %>
-                            <input type="checkbox" name="skills" value="<%=skill.getsId() %>">
+                                </c:when>
+                                <c:otherwise>
+                            <input type="checkbox" name="skills" value="<c:out value="${skill.getsId()}"></c:out>">
                             <%
-                                }
+                                //}
                             %>
-                            <label  class="u-label"><%=skill.getsName() %></label>
+                                </c:otherwise>
+                            </c:choose>
+                            <label  class="u-label"><c:out value="${skill.getsName()}"></c:out></label>
                         </div>
                         <%
-                            count++;
-                            }
+                            //count++;
+                            //}
                         %>
-                        
+                        <c:set var="count" value="${count+1}" scope="page" />
+                        </c:forEach>
                         <div class="u-align-center u-form-group u-form-submit">
                             <a href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Update CV</a>
                         </div>
                         
                     </form>
                 </div>
+                
                 <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/79506d11e688f731ccd8668ea9a270a8f1c3bbe48deaaa39778eb19163c1b45a18be6e4c3e8f265299f9a3284a2e8cc04605fdfc7290b9d7c20251_1280.png" alt="" data-image-width="1280" data-image-height="1280">
                 <a href="https://nicepage.com/joomla-templates" class="u-border-2 u-border-black u-btn u-button-style u-hover-custom-color-3 u-none u-text-black u-text-hover-white u-btn-2">Change avatar</a>
                 
