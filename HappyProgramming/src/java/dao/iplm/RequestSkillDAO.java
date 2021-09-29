@@ -49,7 +49,7 @@ public class RequestSkillDAO extends MyDAO implements dao.RequestSkillDAO{
         return sList;
     }
     
-//    @Override
+    @Override
     public int skillRequest(int sId) {
         int n = 0;
         RequestSkillDAO dao = new RequestSkillDAO();
