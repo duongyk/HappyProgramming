@@ -1,19 +1,9 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Sep 27, 2021, 10:23:07 AM
-    Author     : Tung
-*/
-
 .u-section-1 {
   background-image: none;
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 692px;
+  min-height: 795px;
 }
 
 .u-section-1 .u-text-1 {
@@ -24,7 +14,7 @@ and open the template in the editor.
 
 .u-section-1 .u-form-1 {
   height: 437px;
-  margin: 55px 0 60px 20px;
+  margin: 55px 0 0 20px;
 }
 
 .u-section-1 .u-form-group-1 {
@@ -39,10 +29,26 @@ and open the template in the editor.
   margin-left: 0;
 }
 
+.u-section-1 .u-form-group-5 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-form-group-6 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-form-group-7 {
+  margin-left: 0;
+}
+
 .u-section-1 .u-btn-1 {
   background-image: none;
   border-style: none;
   font-weight: 700;
+}
+
+.u-section-1 .u-text-2 {
+  margin: -153px auto 60px -44px;
 }
 
 @media (max-width: 1199px) {

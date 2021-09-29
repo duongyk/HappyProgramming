@@ -50,13 +50,12 @@ public class RequestDAO extends MyDAO implements dao.RequestDAO{
     @Override
     public int createRequest(Request req) {
         int n = 0;
-        xSql = "insert into [Request](title, content, fromId, toId, deadlineDate, deadlineHour, rStatus) "
-                + "values (?, ?, ?, ?, getdate(), 'pending');";
+        xSql = "INSERT INTO [Request](title, content, fromId, toId, deadlineDate, rStatus) VALUES (?, ?, ?, ?, ?, 'pending');";
         try {
             ps = con.prepareStatement(xSql);
             ps.setString(1, req.getTitle());
             ps.setString(2, req.getContent());
-            ps.setInt(3, req.getToId());
+            ps.setInt(3, req.getFromId());
             ps.setInt(4, req.getToId());
             ps.setDate(5, req.getDeadlineDate());
             n = ps.executeUpdate();
@@ -65,5 +64,11 @@ public class RequestDAO extends MyDAO implements dao.RequestDAO{
             e.printStackTrace();
         }
         return n;
+    }
+    
+    public static void main(String[] args) {
+        RequestDAO dao = new RequestDAO();
+        Request req = new Request("HELP", "AAAAAA", 2, 13, Date.valueOf("2021-11-12"));
+        System.out.println(dao.createRequest(req));
     }
 }

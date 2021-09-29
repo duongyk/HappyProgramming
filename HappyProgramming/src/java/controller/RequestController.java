@@ -22,7 +22,6 @@ import dao.iplm.RequestSkillDAO;
 import dao.iplm.SkillDAO;
 import dao.iplm.UserDAO;
 import entity.Skill;
-import java.text.SimpleDateFormat;
 import java.sql.Date;
 
 /**
@@ -60,7 +59,13 @@ public class RequestController extends HttpServlet {
                 request.setAttribute("listRequest", listRequest);
                 sendDispatcher(request, response, "newjsp.jsp");
             }
-            
+            /* load create request screen */
+            if(service.equalsIgnoreCase("loadRequest")) {
+                ArrayList<Skill> sList = skillDAO.getAllSkill();
+                request.setAttribute("sList", sList);
+                
+                sendDispatcher(request, response, "createRequest.jsp");
+            }
             
             /* create a new request */
             if (service.equalsIgnoreCase("createRequest")) {
@@ -71,30 +76,31 @@ public class RequestController extends HttpServlet {
 
 
                 User x = (User) request.getSession().getAttribute("currUser");
-//                
 //                ArrayList<User> mentor = userDao.getUserByRole(2);
 //                request.setAttribute("mList", mentor);
-                ArrayList<Skill> sList = skillDAO.getAllSkill();
-                request.setAttribute("sList", sList);
+//                ArrayList<Skill> sList = skillDAO.getAllSkill();
+//                request.setAttribute("sList", sList);
 
                 String title = request.getParameter("title");
                 String content = request.getParameter("content");
                 int fromId = x.getuId();
                 
-//                User m = userDao.getMentorByName(request.getParameter("toId"));
-                int toId = userDao.getIdByName("toId");
-//                int toId = Integer.parseInt(request.getParameter("toId")); //bug
-//                String deadline = request.getParameter("deadlineDate");
-//                Date deadlineDate = Date.valueOf(deadline);
+                User m = userDao.getMentorByName(request.getParameter("toId"));
+                int toId = m.getuId();
+//                int toId = Integer.parseInt(request.getParameter("toId")); //bug //daxong
+
+                String deadline = request.getParameter("deadlineDate");
+                Date deadlineDate = Date.valueOf(deadline); //bug
                 
-//                Request req = new Request(title, content, fromId, toId, deadlineDate);
+                Request req = new Request(title, content, fromId, toId, deadlineDate);
+                requestDAO.createRequest(req);
                 
-//                String arr[] = request.getParameterValues("skill");
-//                for (String str : arr) { //bug
-//                    requestSkillDAO.skillRequest(Integer.parseInt(str));
-//                }
+                String arr[] = request.getParameterValues("skill");
+                for (String str : arr) { //bug
+                    requestSkillDAO.skillRequest(Integer.parseInt(str));
+                }
                 
-                sendDispatcher(request, response, "createRequest.jsp");
+                sendDispatcher(request, response, "index.jsp");
             }
         }
     }

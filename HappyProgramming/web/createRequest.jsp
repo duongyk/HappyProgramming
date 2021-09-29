@@ -87,7 +87,9 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h4 class="u-text u-text-default u-text-font u-text-1">Create Request</h4>
         <div class="u-form u-form-1">
-          <form action="createRequest" method="GET" class="u-clearfix u-form-custom-backend u-form-spacing-26 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 50px;" redirect="true">
+          
+            
+            <form action="RequestControllerMap" method="GET" >
             <%-- Title --%>
             <div class="u-form-group u-form-group-1">
               <label for="text-b048" class="u-form-control-hidden u-label"></label>
@@ -102,17 +104,45 @@
             <div class="u-form-date u-form-group">
               <label for="text-0855" class="u-label">Deadline date</label>
               <input type="date" name="deadlineDate" id="text-0855" value="yyyy-MM-dd" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+            </div> 
+<!--            
+            <div class="u-form-group u-form-group-2">
+              <label for="text-3911" class="u-form-control-hidden u-label"></label>
+              <input type="date" value="yyyy-MM-dd" id="text-3911" name="deadlineDate" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" placeholder="Deadline Date">
             </div>
+            -->
             <%-- Mentor --%>
             <div class="u-form-group u-form-group-1">
               <label for="text-b048" class="u-form-control-hidden u-label"></label>
               <input type="text" placeholder="Mentor" id="text-b048" name="toId" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
             </div>
+            
+<%--            <div class="u-form-group u-form-select u-form-group-4">
+              <label for="select-0895" class="u-label">Mentor</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-0895" name="toId" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                    <% for (User mentor : mList) { %>
+                    <option value=" <%= mentor.getuId() %> "> <%= mentor.getFullname() %> </option>
+                  <% } %>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div>--%>
                 
+            <div class="u-form-group u-form-select u-form-group-4">
+              <label for="select-0895" class="u-label">Skill</label>
+              <div class="u-form-checkbox u-form-group u-form-partition-factor-3 u-form-group-5">
+                  <% for (Skill s : sList) { %>
+                  <input type="checkbox" id="<%= s.getsId() %>" name="skill" value="<%= s.getsId() %>">
+                  <label for="<%= s.getsId() %>" class="u-label"><%= s.getsName()%></label>
+                  <% } %>
+              </div>
+            </div>
+            <%--    
             <div class="u-form-group u-form-select u-form-group-5">
               <label for="select-0895" class="u-label">Skill</label>
               <div class="u-form-select-wrapper">
-                <%--
+                
                 <option type="checkbox" id="select-0895" name="skill" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                     <% for (Skill skill : sList) { %>
                     <p>
@@ -122,21 +152,22 @@
                     <option value="<%= skill.getsId() %> "> <%= skill.getsName() %> </option>
                     <% } %>
                 </option>
-                --%>
+                
                 
                 <% for(Skill x: sList) { %>
                 <p>
                 <input type="checkbox" id="<%= x.getsId()%>" name="skill" value="<%= x.getsId()%>">
-                <label for="<%= x.getsId()%>"> <%= x.getsName()%> </label><br>
+                <label for="<%= x.getsId()%>" > <%= x.getsName()%> </label><br>
                 </p>
                 <% } %>
                 
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
-            </div>    
+            </div> --%>
                 
             <div class="u-align-center u-form-group u-form-submit">
-              <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Create Request</a>
+              <a class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Create Request</a>
+              <input type="hidden" value="createRequest" name="service">
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
                 
