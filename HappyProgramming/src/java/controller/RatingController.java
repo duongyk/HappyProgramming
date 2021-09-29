@@ -5,7 +5,10 @@
  */
 package controller;
 
-import entity.Request;
+import dao.iplm.RatingDAO;
+import dao.iplm.RequestDAO;
+import dao.iplm.UserDAO;
+import entity.Rating;
 import entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,18 +20,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.iplm.RequestDAO;
-import dao.iplm.RequestSkillDAO;
-import dao.iplm.SkillDAO;
-import dao.iplm.UserDAO;
-import entity.Skill;
-import java.sql.Date;
 
 /**
  *
- * @author Tung
+ * @author Duong
  */
-public class RequestController extends HttpServlet {
+public class RatingController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,75 +36,55 @@ public class RequestController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    UserDAO userDao = new UserDAO();
+    UserDAO userDAO = new UserDAO();
+    RatingDAO ratingDAO = new RatingDAO();
     RequestDAO requestDAO = new RequestDAO();
-    RequestSkillDAO requestSkillDAO = new RequestSkillDAO();
-    SkillDAO skillDAO = new SkillDAO();
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+
             String service = request.getParameter("service");
-            
+
             if (service == null) {
-                service = "listRequestByMe";
+                service = "rateMentor";
             }
-            
-            /* Get list request by user*/
-            if (service.equalsIgnoreCase("listRequestByMe")) {
-                User user = (User) request.getSession().getAttribute("currUser");
-                ArrayList<Request> listRequest = requestDAO.getListByMe(user);
-                request.setAttribute("listRequest", listRequest);
-                sendDispatcher(request, response, "ListRequestByMe.jsp");
-            }
-            
-            /* load create request screen */
-            if(service.equalsIgnoreCase("loadRequest")) {
-                ArrayList<Skill> sList = skillDAO.getAllSkill();
-                request.setAttribute("sList", sList);
-                
-                sendDispatcher(request, response, "createRequest.jsp");
-            }
-            
-            /* create a new request */
-            if (service.equalsIgnoreCase("createRequest")) {
-//                User x = (User) request.getSession().getAttribute("currUser");
-//                ArrayList<Request> rList = requestDAO.getListByMe(x);
-//                request.setAttribute("rList", rList);
-//                sendDispatcher(request, response, "createRequest.jsp");
+            // get a Mentor's ratings
+            if (service.equalsIgnoreCase("getRating")) {
+                // get Mentor
+                int mId = Integer.parseInt(request.getParameter("uId"));
+                User mentor = userDAO.getUserById(mId);
+                // get list Rating from Mentor
+                ArrayList<Rating> listRating = ratingDAO.getRating(mentor);
+                // get avarage rating
+                String avg = ratingDAO.getAvgRate(mId);
 
+                request.setAttribute("avg", avg);
+                request.setAttribute("mentor", mentor);
+                request.setAttribute("listRating", listRating);
 
+                sendDispatcher(request, response, "Rating.jsp");
+            }
+
+            // Mentee rates Mentor
+            if (service.equalsIgnoreCase("rateMentor")) {
+                // get current user/ Mentee who rates the Mentor
                 User x = (User) request.getSession().getAttribute("currUser");
-//                ArrayList<User> mentor = userDao.getUserByRole(2);
-//                request.setAttribute("mList", mentor);
-//                ArrayList<Skill> sList = skillDAO.getAllSkill();
-//                request.setAttribute("sList", sList);
+                // get Mentor's ID
+                int mId = Integer.parseInt(request.getParameter("mId"));
+                // get rate and comment
+                int rate = Integer.parseInt(request.getParameter("rate"));
+                String comment = request.getParameter("comment");
+                // create and insert rate
+                Rating rating = new Rating(x.getuId(), mId, comment, rate);
+                ratingDAO.insert(rating);
 
-                String title = request.getParameter("title");
-                String content = request.getParameter("content");
-                int fromId = x.getuId();
-                
-                User m = userDao.getMentorByName(request.getParameter("toId"));
-                int toId = m.getuId();
-//                int toId = Integer.parseInt(request.getParameter("toId")); //bug //daxong
-
-                String deadline = request.getParameter("deadlineDate");
-                Date deadlineDate = Date.valueOf(deadline); //bug
-                
-                Request req = new Request(title, content, fromId, toId, deadlineDate);
-                requestDAO.createRequest(req);
-                
-                String arr[] = request.getParameterValues("skill");
-                for (String str : arr) { //bug
-                    requestSkillDAO.skillRequest(Integer.parseInt(str));
-                }
-                
-                sendDispatcher(request, response, "index.jsp");
+                sendDispatcher(request, response, "Rating.jsp");
             }
         }
     }
-    
+
     public void sendDispatcher(HttpServletRequest request, HttpServletResponse response, String path) {
         try {
             RequestDispatcher rd = request.getRequestDispatcher(path);

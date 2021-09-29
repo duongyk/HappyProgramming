@@ -20,6 +20,10 @@
         <servlet-name>RequestController</servlet-name>
         <servlet-class>controller.RequestController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RatingController</servlet-name>
+        <servlet-class>controller.RatingController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserController</servlet-name>
         <url-pattern>/UserControllerMap</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>RequestController</servlet-name>
         <url-pattern>/RequestControllerMap</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RatingController</servlet-name>
+        <url-pattern>/RatingControllerMap</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

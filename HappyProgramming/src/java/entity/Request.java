@@ -29,6 +29,16 @@ public class Request {
         this.title = title;
     }
 
+    public Request(int rId, String title, String content, int fromId, int toId, Date deadlineDate, String status) {
+        this.rId = rId;
+        this.title = title;
+        this.content = content;
+        this.fromId = fromId;
+        this.toId = toId;
+        this.deadlineDate = deadlineDate;
+        this.status = status;
+    }
+
     public Request(String title, String content, int fromId, int toId, Date deadlineDate, String status) {
         this.title = title;
         this.content = content;

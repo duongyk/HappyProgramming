@@ -25,18 +25,19 @@ public class RequestDAO extends MyDAO implements dao.RequestDAO{
             ps = con.prepareStatement(xSql);
             rs = ps.executeQuery();
             Request x;
+            int xId;
             String xTitle, xContent, xStatus;
             int xMentor;
             Date dlDate, dlHour;
 
             while (rs.next()) {
+                xId = rs.getInt("rId");
                 xTitle = rs.getString("title");
                 xContent = rs.getString("content");
-                xStatus = rs.getString("status");
+                xStatus = rs.getString("rStatus");
                 xMentor = rs.getInt("toId");
                 dlDate = rs.getDate("deadlineDate");
-                dlHour = rs.getDate("deadlineHour");
-                x = new Request(xTitle, xContent, user.getuId(), xMentor, dlDate, xStatus);
+                x = new Request(xId, xTitle, xContent, user.getuId(), xMentor, dlDate, xStatus);
                 list.add(x);
             }
             rs.close();

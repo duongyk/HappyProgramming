@@ -69,6 +69,31 @@ public class RatingDAO extends MyDAO implements dao.RatingDAO {
             e.printStackTrace();
         }
     }
+    
+    public String getAvgRate(int mId) {
+        ArrayList<Integer> listRating = new ArrayList();
+        xSql = "SELECT * FROM [Rating] WHERE [toId] = "+mId;
+        try {
+            ps = con.prepareStatement(xSql);
+            rs = ps.executeQuery();
+            int rate;
+            while (rs.next()) {
+                rate = rs.getInt("ratingAmount");
+                listRating.add(rate);
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        int sum=0;
+        for (int a : listRating) {
+            sum+=a;
+        }
+        
+        String avg = String.format("%.2f", (double)sum/listRating.size());
+        return avg;
+    }
 //    
 //        public static void main(String[] args) {
 //        RatingDAO r = new RatingDAO();

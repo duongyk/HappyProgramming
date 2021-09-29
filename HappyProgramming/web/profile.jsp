@@ -19,7 +19,7 @@
         <p>${user.dob}
         <p>${user.gender}
         <p>${user.uAvatar}
-        <a href="${"UserControllerMap?service=getRating&uId="}${user.uId}">See rating</a>
+        <a href="${"RatingControllerMap?service=getRating&uId=6"}">See rating</a>
         <a href="${"UserControllerMap?service=updateProfile&uId="}${user.uId}">Update Profile</a>    
         
     </body>

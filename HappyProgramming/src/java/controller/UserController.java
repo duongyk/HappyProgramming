@@ -118,26 +118,6 @@ public class UserController extends HttpServlet {
 
             }
 
-            if (service.equalsIgnoreCase("getRating")) {
-                int mId = Integer.parseInt(request.getParameter("uId"));
-                User mentor = userDAO.getUserById(mId);
-                ArrayList<Rating> rList = ratingDAO.getRating(mentor);
-                request.setAttribute("mentor", mentor);
-                request.setAttribute("rList", rList);
-
-                sendDispatcher(request, response, "rating.jsp");
-            }
-
-            if (service.equalsIgnoreCase("rate")) {
-                User x = (User) request.getSession().getAttribute("currUser");
-                int mId = Integer.parseInt(request.getParameter("mId"));
-                int rate = Integer.parseInt(request.getParameter("rate"));
-                String comment = request.getParameter("comment");
-                Rating rating = new Rating(x.getuId(), mId, comment, rate);
-                ratingDAO.insert(rating);
-
-                sendDispatcher(request, response, "rating.jsp");
-            }
 
             if (service.equalsIgnoreCase("profile")) {
                 request.setAttribute("user", request.getSession().getAttribute("currUser"));
