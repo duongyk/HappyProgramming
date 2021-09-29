@@ -37,8 +37,9 @@ public class AdminController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String service = request.getParameter("service");
+            
             if (service == null) {
-                service = "a";
+                service = "test";
             }
             if (service.equalsIgnoreCase("createSkill")) {
                 sendDispatcher(request, response, "createSkill.jsp");
