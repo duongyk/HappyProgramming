@@ -112,8 +112,8 @@
                             <div class="u-align-center u-form-group u-form-submit">
                                 <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-palette-5-dark-1 u-btn-1">Submit</a>
                                 <input type="submit" value="submit" class="u-form-control-hidden">
+                                <input type="hidden" name="service" value="rateMentor">
                             </div>
-                            <input type="hidden" value="rateMentor" name="service">
                         </form>
                     </div>
                 </div>
