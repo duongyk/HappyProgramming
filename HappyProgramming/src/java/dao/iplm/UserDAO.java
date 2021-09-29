@@ -184,4 +184,63 @@ public class UserDAO extends MyDAO implements dao.UserDAO {
         return list;
     }
     
+    public User getMentorByName(String name) {
+        xSql = "select * from [User] where [fullname] like N'%"+ name +"%' and uRole = 2";
+        int id;
+        String username, password, fullname, mail, phone, gender, avatar;
+        Date dob;
+        User u = null;
+        try {
+            ps = con.prepareStatement(xSql);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+                id = rs.getInt("uId");
+                username = rs.getString("username");
+                password = rs.getString("password");
+                fullname = rs.getString("fullname");
+                mail = rs.getString("uMail");
+                phone = rs.getString("uPhone");
+                dob = rs.getDate("DOB");
+                gender = rs.getString("gender");
+                avatar = rs.getString("uAvatar");
+                u = new User(id, username, password, fullname, mail, phone, dob, gender, avatar);
+            }
+            ps.close();
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return u;
+    }
+    
+    public int getIdByName(String name) {
+        int n =0;
+        xSql = "select * from [User] where [fullname] like N'%"+ name +"%' and uRole = 2";
+        int id;
+        User u;
+        try {
+            ps = con.prepareCall(xSql);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+                id = rs.getInt("uId");
+                u = new User(id);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return n;
+    }
+    
+    public static void main(String[] args) {
+        UserDAO u = new UserDAO();
+        System.out.println(u.getMentorByName("Olivia Park"));
+//        User x= u.getUser("admin", "administrator");
+//        if (x!=null) System.out.println(x.getuRole());
+            
+          // test update user function
+//          Date date = new Date();
+//          User user = new User(1, "Mentee1" , "Daxua01", "Master Yi", "menteeno1@fpt.edu.vn", "0932322287",date , "Male", "", 1);
+//          
+//          u.updateUserInfo(1, user);
+    }
 }

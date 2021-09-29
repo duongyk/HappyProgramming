@@ -8,13 +8,12 @@
 <%@page import="entity.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%--
+
 <%
-    ArrayList<User> mList = (ArrayList<User>) request.getAttribute("mList");
+    //ArrayList<User> mList = (ArrayList<User>) request.getAttribute("mList");
     ArrayList<Skill> sList = (ArrayList<Skill>) request.getAttribute("sList");
 %>
---%>>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="vi">
   <head>
@@ -101,33 +100,70 @@
               <label for="text-3911" class="u-form-control-hidden u-label"></label>
               <input type="text" id="text-3911" name="content" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" placeholder="Content" required="required">
             </div>
-            <%-- Dealdine --%>
+            
             <div class="u-form-date u-form-group">
               <label for="text-0855" class="u-label">Deadline date</label>
               <input type="date" name="deadlineDate" id="text-0855" value="yyyy-MM-dd" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
             </div> 
-            <%--- Deadline --%>
-            <div class="u-form-group u-form-select u-form-group-4">
+<!--            
+            <div class="u-form-group u-form-group-2">
+              <label for="text-3911" class="u-form-control-hidden u-label"></label>
+              <input type="date" value="yyyy-MM-dd" id="text-3911" name="deadlineDate" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" placeholder="Deadline Date">
+            </div>
+            -->
+            <%-- Mentor --%>
+            <div class="u-form-group u-form-group-1">
+              <label for="text-b048" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="Mentor" id="text-b048" name="toId" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+            </div>
+            
+<%--            <div class="u-form-group u-form-select u-form-group-4">
               <label for="select-0895" class="u-label">Mentor</label>
               <div class="u-form-select-wrapper">
                 <select id="select-0895" name="toId" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
-                    <c:forEach items="${mList}" var="mentor">
-                    <option value="${mentor.getuId()}"> ${mentor.getFullname()} </option>
-                    </c:forEach>>
+                    <% for (User mentor : mList) { %>
+                    <option value=" <%= mentor.getuId() %> "> <%= mentor.getFullname() %> </option>
+                  <% } %>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
-            </div>
-            <%-- Skill --%>    
+            </div>--%>
+                
             <div class="u-form-group u-form-select u-form-group-4">
               <label for="select-0895" class="u-label">Skill</label>
               <div class="u-form-checkbox u-form-group u-form-partition-factor-3 u-form-group-5">
-                  <c:forEach items="${sList}" var="s">
-                  <input type="checkbox" id="${s.getsId()}" name="skill" value="${s.getsId()}">
-                  <label for="${s.getsId()}" class="u-label"> ${s.getsName()} </label>
-                  </c:forEach>>
+                  <% for (Skill s : sList) { %>
+                  <input type="checkbox" id="<%= s.getsId() %>" name="skill" value="<%= s.getsId() %>">
+                  <label for="<%= s.getsId() %>" class="u-label"><%= s.getsName()%></label>
+                  <% } %>
               </div>
             </div>
+            <%--    
+            <div class="u-form-group u-form-select u-form-group-5">
+              <label for="select-0895" class="u-label">Skill</label>
+              <div class="u-form-select-wrapper">
+                
+                <option type="checkbox" id="select-0895" name="skill" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                    <% for (Skill skill : sList) { %>
+                    <p>
+                    <input type="checbox" id="  " name="skill" value=" <%= skill.getsId() %> ">
+                    <label for=" <%= skill.getsId() %> "> <%= skill.getsName() %> </label>
+                    <p>
+                    <option value="<%= skill.getsId() %> "> <%= skill.getsName() %> </option>
+                    <% } %>
+                </option>
+                
+                
+                <% for(Skill x: sList) { %>
+                <p>
+                <input type="checkbox" id="<%= x.getsId()%>" name="skill" value="<%= x.getsId()%>">
+                <label for="<%= x.getsId()%>" > <%= x.getsName()%> </label><br>
+                </p>
+                <% } %>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div> --%>
                 
             <div class="u-align-center u-form-group u-form-submit">
               <a class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-text-body-alt-color u-btn-1">Create Request</a>
