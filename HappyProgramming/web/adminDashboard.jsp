@@ -81,10 +81,10 @@
         </header>
         <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-0c40">
             <div class="u-clearfix u-sheet u-sheet-1">
-                <a href="https://nicepage.dev" class="u-border-1 u-border-grey-75 u-btn u-button-style u-custom-color-1 u-custom-font u-custom-item u-font-open-sans u-hover-palette-5-dark-1 u-btn-1">Mentor management</a>
-                <a href="https://nicepage.dev" class="u-border-1 u-border-grey-75 u-btn u-button-style u-custom-color-1 u-custom-font u-custom-item u-font-open-sans u-hover-palette-5-dark-1 u-btn-2">Mentee management</a>
-                <a href="https://nicepage.dev" class="u-border-1 u-border-grey-75 u-btn u-button-style u-custom-color-1 u-custom-font u-custom-item u-font-open-sans u-hover-palette-5-dark-1 u-btn-3">Skill management</a>
-                <a href="https://nicepage.dev" class="u-border-1 u-border-grey-75 u-btn u-button-style u-custom-color-1 u-custom-font u-custom-item u-font-open-sans u-hover-palette-5-dark-1 u-btn-4">Request management</a>
+                <a href="AdminControllerMap?service=mentorManage" class="u-border-1 u-border-grey-75 u-btn u-button-style u-custom-color-1 u-custom-font u-custom-item u-font-open-sans u-hover-palette-5-dark-1 u-btn-1">Mentor management</a>
+                <a href="AdminControllerMap?service=menteeManage" class="u-border-1 u-border-grey-75 u-btn u-button-style u-custom-color-1 u-custom-font u-custom-item u-font-open-sans u-hover-palette-5-dark-1 u-btn-2">Mentee management</a>
+                <a href="AdminControllerMap?service=skillManage" class="u-border-1 u-border-grey-75 u-btn u-button-style u-custom-color-1 u-custom-font u-custom-item u-font-open-sans u-hover-palette-5-dark-1 u-btn-3">Skill management</a>
+                <a href="AdminControllerMap?service=requestManage" class="u-border-1 u-border-grey-75 u-btn u-button-style u-custom-color-1 u-custom-font u-custom-item u-font-open-sans u-hover-palette-5-dark-1 u-btn-4">Request management</a>
                 <div class="u-shape u-shape-rectangle u-white u-shape-1"></div>
                 <p class="u-text u-text-1">
                     <span style="font-weight: 700;"> Hi Admin</span>, your analytics are all set

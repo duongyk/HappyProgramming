@@ -5,8 +5,11 @@
  */
 package controller;
 
+import dao.iplm.SkillDAO;
+import entity.Skill;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -15,10 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Duong
- */
+
 public class AdminController extends HttpServlet {
 
     /**
@@ -30,6 +30,8 @@ public class AdminController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    SkillDAO skillDAO = new SkillDAO();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -41,9 +43,16 @@ public class AdminController extends HttpServlet {
             if (service.equalsIgnoreCase("createSkill")) {
                 sendDispatcher(request, response, "createSkill.jsp");
             }
+
+            if (service.equalsIgnoreCase("skillManage")) {
+
+                ArrayList<Skill> sList = skillDAO.getAllSkill();
+                request.setAttribute("sList", sList);
+                sendDispatcher(request, response, "skillManagement.jsp");
+            }
         }
     }
-    
+
     public void sendDispatcher(HttpServletRequest request, HttpServletResponse response, String path) {
         try {
             RequestDispatcher rd = request.getRequestDispatcher(path);
@@ -54,6 +63,7 @@ public class AdminController extends HttpServlet {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
